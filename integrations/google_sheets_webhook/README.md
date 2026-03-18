@@ -1,10 +1,10 @@
 # Google Sheets Receiver
 
-This folder contains a minimal Google Apps Script receiver for the ADU screening app.
+This folder contains a Google Apps Script receiver for the ADU screening app.
 
 ## Files
 
-- `Code.gs`: webhook receiver that accepts POST requests from the app and appends normalized rows into a sheet
+- `Code.gs`: webhook receiver that accepts POST requests from the app and upserts normalized rows into a sheet by `lead_id`
 
 ## Deploy steps
 
@@ -30,7 +30,8 @@ export ADU_LEAD_WEBHOOK_HEADERS_JSON=""
 
 ## Notes
 
-- This receiver is intentionally simple and optimized for first production testing.
+- This receiver is optimized for first production testing.
 - It supports `lead.created`, `lead.updated`, and `lead.deleted`.
 - It also stores `wechat_id` and `disposition_reason` when present.
 - The receiver stores the raw payload JSON in the row so you can inspect the full lead later.
+- The `Leads` tab is updated by `lead_id`, so updates and deletes do not create duplicate rows by default.

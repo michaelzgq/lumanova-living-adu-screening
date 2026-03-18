@@ -1,5 +1,45 @@
 const SHEET_NAME = 'Leads';
 const SHARED_TOKEN = 'replace-me';
+const HEADERS = [
+  'received_at',
+  'event_type',
+  'lead_id',
+  'created_at',
+  'last_updated_at',
+  'full_name',
+  'email',
+  'phone',
+  'wechat_id',
+  'contact_preference',
+  'best_contact_time',
+  'property_address',
+  'brief_goal',
+  'jurisdiction',
+  'owner_on_title',
+  'project_type',
+  'structure_type',
+  'hillside',
+  'basement',
+  'addition_without_permit',
+  'unpermitted_work',
+  'prior_violation',
+  'prior_plans',
+  'separate_utility_request',
+  'recommended_path',
+  'risk_tier',
+  'recommended_service',
+  'stage',
+  'disposition_reason',
+  'assigned_to',
+  'next_action',
+  'source_tag',
+  'utm_source',
+  'utm_medium',
+  'utm_campaign',
+  'external_sync_status',
+  'deleted_at',
+  'raw_payload_json',
+];
 
 function doPost(e) {
   try {
@@ -20,46 +60,14 @@ function doPost(e) {
 
     const sheet = getOrCreateSheet_();
     ensureHeaderRow_(sheet);
+    const rowValues = buildRowValues_(payload, lead, answers, result);
+    const rowIndex = findLeadRowById_(sheet, lead.id || '');
 
-    sheet.appendRow([
-      payload.sent_at || '',
-      payload.event_type || '',
-      lead.id || '',
-      lead.created_at || '',
-      lead.last_updated_at || '',
-      answers.full_name || '',
-      answers.email || '',
-      answers.phone || '',
-      answers.wechat_id || '',
-      answers.contact_preference || '',
-      answers.best_contact_time || '',
-      answers.property_address || '',
-      answers.brief_goal || '',
-      answers.jurisdiction || '',
-      answers.owner_on_title || '',
-      answers.project_type || '',
-      answers.structure_type || '',
-      answers.hillside || '',
-      answers.basement || '',
-      answers.addition_without_permit || '',
-      answers.unpermitted_work || '',
-      answers.prior_violation || '',
-      answers.prior_plans || '',
-      answers.separate_utility_request || '',
-      result.recommended_path || '',
-      result.risk_tier || '',
-      result.recommended_service || '',
-      lead.stage || '',
-      lead.disposition_reason || '',
-      lead.assigned_to || '',
-      lead.next_action || '',
-      answers.source_tag || '',
-      answers.utm_source || '',
-      answers.utm_medium || '',
-      answers.utm_campaign || '',
-      lead.external_sync_status || '',
-      JSON.stringify(payload),
-    ]);
+    if (rowIndex > 0) {
+      sheet.getRange(rowIndex, 1, 1, rowValues.length).setValues([rowValues]);
+    } else {
+      sheet.appendRow(rowValues);
+    }
 
     return jsonResponse({ ok: true }, 200);
   } catch (error) {
@@ -81,45 +89,71 @@ function ensureHeaderRow_(sheet) {
     return;
   }
 
-  sheet.appendRow([
-    'received_at',
-    'event_type',
-    'lead_id',
-    'created_at',
-    'last_updated_at',
-    'full_name',
-    'email',
-    'phone',
-    'wechat_id',
-    'contact_preference',
-    'best_contact_time',
-    'property_address',
-    'brief_goal',
-    'jurisdiction',
-    'owner_on_title',
-    'project_type',
-    'structure_type',
-    'hillside',
-    'basement',
-    'addition_without_permit',
-    'unpermitted_work',
-    'prior_violation',
-    'prior_plans',
-    'separate_utility_request',
-    'recommended_path',
-    'risk_tier',
-    'recommended_service',
-    'stage',
-    'disposition_reason',
-    'assigned_to',
-    'next_action',
-    'source_tag',
-    'utm_source',
-    'utm_medium',
-    'utm_campaign',
-    'external_sync_status',
-    'raw_payload_json',
-  ]);
+  sheet.appendRow(HEADERS);
+}
+
+function buildRowValues_(payload, lead, answers, result) {
+  const isDeleted = (payload.event_type || '') === 'lead.deleted';
+  return [
+    payload.sent_at || '',
+    payload.event_type || '',
+    lead.id || '',
+    lead.created_at || '',
+    lead.last_updated_at || '',
+    answers.full_name || '',
+    answers.email || '',
+    answers.phone || '',
+    answers.wechat_id || '',
+    answers.contact_preference || '',
+    answers.best_contact_time || '',
+    answers.property_address || '',
+    answers.brief_goal || '',
+    answers.jurisdiction || '',
+    answers.owner_on_title || '',
+    answers.project_type || '',
+    answers.structure_type || '',
+    answers.hillside || '',
+    answers.basement || '',
+    answers.addition_without_permit || '',
+    answers.unpermitted_work || '',
+    answers.prior_violation || '',
+    answers.prior_plans || '',
+    answers.separate_utility_request || '',
+    result.recommended_path || '',
+    result.risk_tier || '',
+    result.recommended_service || '',
+    lead.stage || '',
+    lead.disposition_reason || '',
+    lead.assigned_to || '',
+    lead.next_action || '',
+    answers.source_tag || '',
+    answers.utm_source || '',
+    answers.utm_medium || '',
+    answers.utm_campaign || '',
+    lead.external_sync_status || '',
+    isDeleted ? (payload.sent_at || '') : '',
+    JSON.stringify(payload),
+  ];
+}
+
+function findLeadRowById_(sheet, leadId) {
+  if (!leadId) {
+    return 0;
+  }
+
+  const lastRow = sheet.getLastRow();
+  if (lastRow < 2) {
+    return 0;
+  }
+
+  const idColumn = 3;
+  const values = sheet.getRange(2, idColumn, lastRow - 1, 1).getValues();
+  for (let index = 0; index < values.length; index += 1) {
+    if (String(values[index][0] || '') === String(leadId)) {
+      return index + 2;
+    }
+  }
+  return 0;
 }
 
 function jsonResponse(payload, statusCode) {

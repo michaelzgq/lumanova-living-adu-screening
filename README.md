@@ -112,6 +112,7 @@ The fastest shared inbox setup for this project is Google Sheets via Apps Script
 - [knowledge/google_sheets_setup.md](/Users/mikezhang/Documents/lumanova living/adu_screening_mvp/knowledge/google_sheets_setup.md)
 - [integrations/google_sheets_webhook/README.md](/Users/mikezhang/Documents/lumanova living/adu_screening_mvp/integrations/google_sheets_webhook/README.md)
 - [integrations/google_sheets_webhook/Code.gs](/Users/mikezhang/Documents/lumanova living/adu_screening_mvp/integrations/google_sheets_webhook/Code.gs)
+- [run_prepare_google_sheets.command](/Users/mikezhang/Documents/lumanova living/adu_screening_mvp/run_prepare_google_sheets.command)
 
 When a webhook is configured:
 

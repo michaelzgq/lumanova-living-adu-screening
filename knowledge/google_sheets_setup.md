@@ -54,35 +54,35 @@ Because of that, the safest simple setup for this screening app is:
 - keep the secret in the webhook URL query string
 - do not rely on bearer headers for the Google Sheets receiver
 
-## Suggested sheet columns
+## Suggested operating pattern
 
-Keep one tab named `Leads` with columns such as:
+Use one tab named `Leads`.
 
-- `received_at`
-- `event_type`
-- `lead_id`
-- `full_name`
-- `email`
-- `phone`
-- `wechat_id`
-- `contact_preference`
-- `best_contact_time`
-- `property_address`
-- `brief_goal`
-- `jurisdiction`
-- `recommended_path`
-- `risk_tier`
-- `recommended_service`
-- `stage`
-- `disposition_reason`
-- `assigned_to`
-- `next_action`
-- `source_tag`
-- `utm_source`
-- `utm_medium`
-- `utm_campaign`
-- `external_sync_status`
-- `notes_json`
+The provided Apps Script now updates rows by `lead_id` instead of always appending.
+
+That means:
+
+- `lead.created` creates the row
+- `lead.updated` overwrites the same row
+- `lead.deleted` marks the row with `deleted_at`
+
+If you want a separate audit trail later, add a second `Events` tab in a future version.
+
+## Fastest local prep
+
+To generate a ready-to-paste token, a customized `Code.gs`, and a Streamlit secrets snippet:
+
+```bash
+cd "/Users/mikezhang/Documents/lumanova living/adu_screening_mvp"
+./run_prepare_google_sheets.command
+```
+
+This creates:
+
+- `output/google_sheets_setup/Code.gs`
+- `output/google_sheets_setup/google_sheets_token.txt`
+- `output/google_sheets_setup/streamlit_secrets_snippet.toml`
+- `output/google_sheets_setup/NEXT_STEPS.md`
 
 ## Operating model
 
