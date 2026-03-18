@@ -76,6 +76,12 @@ For a hosted test build, set:
 
 That forces the app to stay in public mode even if someone manually adds `?view=admin`.
 
+If you want the root public URL to open a specific front-door variant by default, set:
+
+- `ADU_DEFAULT_PUBLIC_ENTRY=garage`
+- `ADU_DEFAULT_PUBLIC_ENTRY=adu`
+- `ADU_DEFAULT_PUBLIC_ENTRY=legalization`
+
 For a hosted admin view, set:
 
 - `ADU_ADMIN_PASSWORD=...`

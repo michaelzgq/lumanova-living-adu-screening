@@ -5,6 +5,7 @@
 #   export ADU_LEAD_WEBHOOK_HEADERS_JSON='{"X-Workspace":"lumanova-living"}'
 #   export ADU_LEAD_WEBHOOK_TIMEOUT_SECONDS="8"
 #   export ADU_FORCE_PUBLIC_ONLY="true"
+#   export ADU_DEFAULT_PUBLIC_ENTRY="default"
 #   export ADU_ADMIN_PASSWORD="set-a-real-password"
 #
 # Recommended Google Sheets path:
@@ -21,4 +22,5 @@ ADU_LEAD_WEBHOOK_BEARER_TOKEN=""
 ADU_LEAD_WEBHOOK_HEADERS_JSON=""
 ADU_LEAD_WEBHOOK_TIMEOUT_SECONDS="8"
 ADU_FORCE_PUBLIC_ONLY="false"
+ADU_DEFAULT_PUBLIC_ENTRY="default"
 ADU_ADMIN_PASSWORD=""

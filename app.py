@@ -1365,10 +1365,19 @@ def disposition_label(reason: str) -> str:
     return DISPOSITION_LABELS[current_language()].get(reason, reason or t("none"))
 
 
+def normalize_public_entry_key(value: str) -> str:
+    normalized = str(value or "").strip().casefold()
+    return normalized if normalized in PUBLIC_ENTRY_VARIANTS else "default"
+
+
 def current_public_entry() -> str:
     query_params = st.query_params
-    requested = str(query_params.get("entry", "default")).strip().casefold()
-    return requested if requested in PUBLIC_ENTRY_VARIANTS else "default"
+    requested = str(query_params.get("entry", "")).strip()
+    if requested:
+        return normalize_public_entry_key(requested)
+
+    configured_default = get_setting("ADU_DEFAULT_PUBLIC_ENTRY", "default")
+    return normalize_public_entry_key(configured_default)
 
 
 def current_public_variant() -> dict[str, Any]:
