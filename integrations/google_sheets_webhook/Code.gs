@@ -215,7 +215,7 @@ function buildRowValues_(payload, lead, answers, result) {
     answers.utm_source || '',
     answers.utm_medium || '',
     answers.utm_campaign || '',
-    lead.external_sync_status || '',
+    'synced',
     isDeleted ? (payload.sent_at || '') : '',
     JSON.stringify(payload),
   ];
