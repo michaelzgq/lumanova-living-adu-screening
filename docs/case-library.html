@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ui-lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,22 +9,30 @@
       content="Representative LA and SGV project patterns for garage conversions, detached ADUs, and legalization issues. See how different property situations get screened before design or construction."
     />
     <link rel="stylesheet" href="./site.css" />
+    <script src="./site.js" defer></script>
   </head>
   <body>
     <div class="site-shell">
       <header class="site-nav">
         <div class="brand-lockup">
           <div class="brand-name">Lumanova Living</div>
-          <div class="brand-tag">Property screening for LA and SGV homeowners</div>
+          <div class="brand-tag">
+            <span data-lang="en">Property screening for LA and SGV homeowners</span>
+            <span data-lang="zh">洛杉矶与圣盖博谷业主的物业预筛工具</span>
+          </div>
         </div>
         <nav class="nav-links">
-          <a class="nav-link" href="./index.html">Home</a>
-          <a class="nav-link" href="./garage-guide.html">Garage Guide</a>
-          <a class="nav-link" href="./legalization.html">Legalization</a>
-          <a class="nav-link" href="./city-guide.html">City Guide</a>
-          <a class="nav-link is-active" href="./case-library.html">Case Library</a>
-          <a class="nav-link" href="./gallery.html">Gallery</a>
-          <a class="nav-link" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/">Property Screen</a>
+          <a class="nav-link" href="./index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
+          <a class="nav-link" href="./garage-guide.html"><span data-lang="en">Garage Guide</span><span data-lang="zh">车库指南</span></a>
+          <a class="nav-link" href="./legalization.html"><span data-lang="en">Legalization</span><span data-lang="zh">合法化</span></a>
+          <a class="nav-link" href="./city-guide.html"><span data-lang="en">City Guide</span><span data-lang="zh">城市入口</span></a>
+          <a class="nav-link is-active" href="./case-library.html"><span data-lang="en">Case Library</span><span data-lang="zh">案例库</span></a>
+          <a class="nav-link" href="./gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">作品展示</span></a>
+          <a class="nav-link" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/"><span data-lang="en">Property Screen</span><span data-lang="zh">开始预筛</span></a>
+          <div class="lang-switch" aria-label="Language switch">
+            <button class="lang-button" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+            <button class="lang-button" type="button" data-set-lang="zh" aria-pressed="false">中文</button>
+          </div>
         </nav>
       </header>
 
