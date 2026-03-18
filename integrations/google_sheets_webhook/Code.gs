@@ -1,3 +1,4 @@
+const SPREADSHEET_ID = 'replace-spreadsheet-id';
 const SHEET_NAME = 'Leads';
 const SHARED_TOKEN = 'replace-me';
 const HEADERS = [
@@ -161,7 +162,10 @@ function buildLeadListResponse_(limit) {
 }
 
 function getOrCreateSheet_() {
-  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const spreadsheet =
+    SPREADSHEET_ID && SPREADSHEET_ID !== 'replace-spreadsheet-id'
+      ? SpreadsheetApp.openById(SPREADSHEET_ID)
+      : SpreadsheetApp.getActiveSpreadsheet();
   let sheet = spreadsheet.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = spreadsheet.insertSheet(SHEET_NAME);
