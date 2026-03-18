@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import hmac
 import re
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlparse
 from pathlib import Path
 from typing import Any, Optional
 
@@ -1400,6 +1400,29 @@ def public_entry_href(entry_key: str) -> str:
     return f"?{query_string}"
 
 
+def normalize_public_base_url(base_url: str) -> str:
+    cleaned = base_url.strip()
+    if not cleaned:
+        return suggested_public_base_url()
+
+    parsed = urlparse(cleaned if "://" in cleaned else f"https://{cleaned}")
+    host = parsed.netloc or parsed.path
+    path = parsed.path if parsed.netloc else ""
+
+    if not host:
+        return suggested_public_base_url()
+
+    is_local = host.startswith("localhost") or host.startswith("127.0.0.1")
+    scheme = parsed.scheme or ("http" if is_local else "https")
+    if not is_local and host.endswith("streamlit.app"):
+        scheme = "https"
+    if not is_local and scheme == "http":
+        scheme = "https"
+
+    normalized_path = path.rstrip("/")
+    return f"{scheme}://{host}{normalized_path}"
+
+
 def build_public_url(base_url: str, entry_key: str, *, source: str = "", medium: str = "", campaign: str = "", embed: bool = False) -> str:
     params: dict[str, str] = {"view": "public"}
     if entry_key != "default":
@@ -1414,7 +1437,7 @@ def build_public_url(base_url: str, entry_key: str, *, source: str = "", medium:
     if embed:
         params["embed"] = "1"
     query_string = urlencode(params)
-    normalized_base = base_url.rstrip("/")
+    normalized_base = normalize_public_base_url(base_url).rstrip("/")
     return f"{normalized_base}/?{query_string}"
 
 
@@ -2605,7 +2628,10 @@ def suggested_public_base_url() -> str:
         host = headers.get("Host", "")
         proto = headers.get("X-Forwarded-Proto", "")
         if host:
-            scheme = proto or "http"
+            is_local = host.startswith("localhost") or host.startswith("127.0.0.1")
+            scheme = proto or ("http" if is_local else "https")
+            if host.endswith("streamlit.app"):
+                scheme = "https"
             return f"{scheme}://{host}"
     except Exception:
         pass
@@ -2617,6 +2643,9 @@ def render_launch_kit() -> None:
     st.caption(t("launch_kit_caption"))
 
     base_url = st.text_input(t("public_base_url"), value=suggested_public_base_url())
+    normalized_base_url = normalize_public_base_url(base_url)
+    if normalized_base_url != base_url.strip():
+        st.caption(f"{t('public_base_url')}: {normalized_base_url}")
     launch_cols = st.columns(4)
     source = launch_cols[0].text_input(t("campaign_source"), value="wechat_sgv")
     medium = launch_cols[1].text_input(t("campaign_medium"), value="social")
@@ -2627,11 +2656,11 @@ def render_launch_kit() -> None:
 
     st.write(f"**{t('channel_templates')}**")
     for entry_key, label in entry_order:
-        link = build_public_url(base_url, entry_key, source=source, medium=medium, campaign=campaign, embed=embed_mode)
+        link = build_public_url(normalized_base_url, entry_key, source=source, medium=medium, campaign=campaign, embed=embed_mode)
         st.text_input(label, value=link, key=f"launch_link_{entry_key}")
 
-    general_link = build_public_url(base_url, "default", source=source, medium=medium, campaign=campaign, embed=embed_mode)
-    garage_link = build_public_url(base_url, "garage", source=source, medium=medium, campaign=campaign, embed=embed_mode)
+    general_link = build_public_url(normalized_base_url, "default", source=source, medium=medium, campaign=campaign, embed=embed_mode)
+    garage_link = build_public_url(normalized_base_url, "garage", source=source, medium=medium, campaign=campaign, embed=embed_mode)
 
     st.write(f"**{t('share_copy')}**")
     st.text_area(
