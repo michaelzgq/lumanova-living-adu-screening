@@ -8,7 +8,7 @@ from typing import Any, Optional
 
 import streamlit as st
 
-from app.config import get_bool_setting, get_setting
+from app.config import debug_setting_state, get_bool_setting, get_setting
 from app.copilot import generate_copilot_brief
 from app.delivery import (
     apply_delivery_result,
@@ -2253,6 +2253,42 @@ def render_stage_guide() -> None:
         )
 
 
+def _masked_config_value(name: str, value: str) -> str:
+    if not value:
+        return "missing"
+    if name == "ADU_LEAD_WEBHOOK_URL":
+        if "?token=" in value:
+            base, token = value.split("?token=", 1)
+            suffix = token[-6:] if len(token) >= 6 else token
+            return f"{base}?token=***{suffix}"
+        return value
+    if name == "ADU_ADMIN_PASSWORD":
+        return f"set ({len(value)} chars)"
+    return value
+
+
+def render_admin_config_diagnostics() -> None:
+    with st.expander("Config diagnostics", expanded=False):
+        names = [
+            "ADU_LEAD_WEBHOOK_URL",
+            "ADU_ADMIN_PASSWORD",
+            "ADU_FORCE_PUBLIC_ONLY",
+        ]
+        for name in names:
+            state = debug_setting_state(name)
+            st.write(f"**{name}**")
+            st.write(
+                {
+                    "effective_present": state["effective_present"],
+                    "env_present": state["env_present"],
+                    "direct_secret_present": state["direct_secret_present"],
+                    "nested_secret_present": state["nested_secret_present"],
+                    "secrets_available": state["secrets_available"],
+                    "effective_value_preview": _masked_config_value(name, str(state["effective_value"])),
+                }
+            )
+
+
 def render_copilot_brief(lead: LeadRecord) -> None:
     brief = generate_copilot_brief(lead)
     with st.expander(t("ai_copilot"), expanded=True):
@@ -2304,6 +2340,7 @@ def render_lead_inbox(repository: LeadRepository) -> None:
         st.success(f"{t('webhook_ready')} {webhook_target_label()}")
     else:
         st.warning(t("webhook_missing"))
+    render_admin_config_diagnostics()
     metric_cols = st.columns(5)
     metric_cols[0].metric(t("leads"), len(leads))
     metric_cols[1].metric(route_label("A"), sum(1 for lead in leads if lead.result.recommended_path == "A"))
