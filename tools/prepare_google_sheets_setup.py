@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import secrets
 from pathlib import Path
+from urllib.parse import quote
 
 
 def main() -> None:
@@ -16,11 +17,13 @@ def main() -> None:
 
     (output_dir / "Code.gs").write_text(customized_code, encoding="utf-8")
     (output_dir / "google_sheets_token.txt").write_text(shared_token, encoding="utf-8")
+    webhook_url_template = f"https://script.google.com/macros/s/DEPLOYMENT_ID/exec?token={quote(shared_token)}"
+    healthcheck_url_template = f"https://script.google.com/macros/s/DEPLOYMENT_ID/exec?token={quote(shared_token)}"
     (output_dir / "streamlit_secrets_snippet.toml").write_text(
         "\n".join(
             [
                 "# Paste these into Streamlit Cloud secrets after you deploy Apps Script.",
-                f'ADU_LEAD_WEBHOOK_URL = "https://script.google.com/macros/s/DEPLOYMENT_ID/exec?token={shared_token}"',
+                f'ADU_LEAD_WEBHOOK_URL = "{webhook_url_template}"',
                 'ADU_LEAD_WEBHOOK_BEARER_TOKEN = ""',
                 'ADU_LEAD_WEBHOOK_HEADERS_JSON = ""',
                 'ADU_LEAD_WEBHOOK_TIMEOUT_SECONDS = "8"',
@@ -43,8 +46,9 @@ def main() -> None:
                 "   - Execute as: Me",
                 "   - Who has access: Anyone with the link",
                 "5. Copy the deployed Web app URL.",
-                "6. Replace `DEPLOYMENT_ID` in `streamlit_secrets_snippet.toml` with the real Apps Script URL.",
-                "7. Paste the resulting values into Streamlit Cloud secrets and redeploy the app.",
+                "6. Replace `DEPLOYMENT_ID` in `streamlit_secrets_snippet.toml` with the real Apps Script deployment ID or full URL path segment.",
+                f"7. Health-check the deployment in a browser with: `{healthcheck_url_template}` (replace DEPLOYMENT_ID first).",
+                "8. Paste the resulting values into Streamlit Cloud secrets and redeploy the app.",
                 "",
                 f"Shared token generated for this setup: `{shared_token}`",
                 "",

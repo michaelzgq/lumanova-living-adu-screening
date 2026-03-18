@@ -75,6 +75,30 @@ function doPost(e) {
   }
 }
 
+function doGet(e) {
+  const token = (e && e.parameter && e.parameter.token) || '';
+  if (!token || token !== SHARED_TOKEN) {
+    return jsonResponse(
+      {
+        ok: false,
+        error: 'unauthorized',
+        hint: 'Append ?token=YOUR_SHARED_TOKEN to the web app URL.',
+      },
+      401,
+    );
+  }
+
+  return jsonResponse(
+    {
+      ok: true,
+      receiver: 'google_sheets_webhook',
+      sheet_name: SHEET_NAME,
+      message: 'Receiver is reachable. POST lead payloads to this URL.',
+    },
+    200,
+  );
+}
+
 function getOrCreateSheet_() {
   const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   let sheet = spreadsheet.getSheetByName(SHEET_NAME);

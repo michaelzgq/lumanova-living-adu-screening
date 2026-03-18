@@ -45,6 +45,13 @@ Every successful submission or update can POST:
 8. Put that URL into:
    - `ADU_LEAD_WEBHOOK_URL`
 
+## Health check
+
+After deployment, open the same tokenized URL in a browser.
+
+- If deployment and sharing are correct, the page should return a small JSON response with `"ok": true`.
+- If Google shows a sign-in page or a Drive error page, the web app is not deployed with the correct public access.
+
 ## Why the token is in the URL
 
 Google Apps Script web apps do not reliably expose incoming custom headers in the simple `doPost(e)` flow.

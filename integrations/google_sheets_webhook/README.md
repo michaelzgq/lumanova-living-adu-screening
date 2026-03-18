@@ -20,6 +20,13 @@ This folder contains a Google Apps Script receiver for the ADU screening app.
 7. Put that full URL into:
    - `ADU_LEAD_WEBHOOK_URL`
 
+## Health check
+
+Open the same tokenized URL in a browser.
+
+- Expected: a JSON response with `"ok": true`
+- Not expected: a Google sign-in page or a Drive error page
+
 ## App configuration example
 
 ```bash
