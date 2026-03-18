@@ -1,0 +1,67 @@
+entries:
+  - id: city_of_los_angeles
+    title: City of Los Angeles routing note
+    tags: [city_of_los_angeles, A, C, B]
+    summary: LA City cases must be separated between standard ADU path work and UDU-style rescue work. Do not collapse those into one front-door offer.
+    source_url: https://planning.lacity.gov/plans-policies/unpermitted-dwelling-units
+  - id: unincorporated_la_county
+    title: LA County garage conversion note
+    tags: [unincorporated_la_county, garage_conversion, A, C]
+    summary: LA County's garage-conversion program is narrow and depends on existing conditions. Additions, unpermitted work, basement conditions, and hillside constraints usually move the lead out of the simplest path.
+    source_url: https://pw.lacounty.gov/building-and-safety/adu/garage
+  - id: detached_adu
+    title: Detached ADU path note
+    tags: [detached_adu, A]
+    summary: Detached ADU cases are the cleanest front-door candidates when records are aligned and the property can be routed to the right jurisdiction from the start.
+    source_url: https://www.hcd.ca.gov/building-standards/adu/handbook
+  - id: garage_conversion
+    title: Garage conversion path note
+    tags: [garage_conversion, A, C]
+    summary: Garage conversion sounds simple in marketing language but becomes a blocker case quickly when existing conditions are unclear or nonstandard.
+    source_url: https://pw.lacounty.gov/building-and-safety/adu/garage
+  - id: jadu
+    title: JADU path note
+    tags: [jadu, A, C]
+    summary: JADU projects should stay separate from detached ADU offers because they rely on a different existing-space logic.
+    source_url: https://www.hcd.ca.gov/building-standards/adu/handbook
+  - id: unpermitted_unit
+    title: Rescue / legalization note
+    tags: [unpermitted_unit, B]
+    summary: Existing unpermitted units should be treated as rescue work. They are usually higher-friction and should not be marketed as a simple permit path.
+    source_url: https://planning.lacity.gov/plans-policies/unpermitted-dwelling-units
+  - id: prior_violation
+    title: Prior violation escalates risk
+    tags: [prior_violation, B, C]
+    summary: Once correction notices or code enforcement appear, the handling cost becomes nonlinear and the lead should be upgraded out of the simplest front-door path.
+    source_url: https://housing.lacity.gov/rental-property-owners/accessory-dwelling-unit
+  - id: unpermitted_work
+    title: Unpermitted work blocks fast paths
+    tags: [unpermitted_work, C, B]
+    summary: Existing unpermitted work is a strong signal that records review needs to happen before anyone should promise a fast-track permit path.
+    source_url: https://pw.lacounty.gov/building-and-safety/adu/garage
+  - id: addition_without_permit
+    title: Unpermitted additions complicate routing
+    tags: [addition_without_permit, C, B]
+    summary: Additions built without permits usually break the assumptions behind standard garage-conversion or detached-path marketing claims.
+    source_url: https://pw.lacounty.gov/building-and-safety/adu/garage
+  - id: basement
+    title: Basement conditions are not standard-path
+    tags: [basement, C, B]
+    summary: Basement or below-grade living space is not the same thing as a simple above-grade ADU or garage conversion. Treat it as a blocker signal.
+    source_url: https://pw.lacounty.gov/building-and-safety/adu/garage
+  - id: hillside
+    title: Hillside conditions trigger extra review
+    tags: [hillside, C, B]
+    summary: Hillside and slope conditions should move the lead out of the cleanest intake bucket until the jurisdiction and site constraints are verified.
+    source_url: https://www.hcd.ca.gov/building-standards/adu/handbook
+  - id: owner_not_ready
+    title: Non-owner leads are lower-readiness
+    tags: [owner_not_ready, A, C, B]
+    summary: If the intake contact is not the owner on title, treat the lead as lower-readiness even if the property itself looks workable.
+    source_url: https://www.cslb.ca.gov/Resources/GuidesAndPublications/AdvertisingGuidelines.pdf
+  - id: jurisdiction_unknown
+    title: Unknown jurisdiction means incomplete routing
+    tags: [jurisdiction_unknown, A, C, B]
+    summary: If the governing jurisdiction is unclear, the right move is to pause claims and confirm records routing before promising any path.
+    source_url: https://pw.lacounty.gov/building-and-safety/
+

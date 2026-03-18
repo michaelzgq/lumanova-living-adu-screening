@@ -1,0 +1,46 @@
+jurisdictions:
+  - key: city_of_los_angeles
+    label: City of Los Angeles
+    routing_notes: Start with LADBS + LA City Planning logic. Detached ADU standard plans and UDU rescue routes must be kept separate.
+    front_door_pages:
+      - Can I build an ADU on my LA City lot?
+      - What is blocking my LADBS permit approval?
+      - Existing unpermitted unit in LA City
+  - key: unincorporated_la_county
+    label: Unincorporated LA County
+    routing_notes: LA County garage-conversion fast-track is narrow. Existing conditions and exclusion items must be screened first.
+    front_door_pages:
+      - LA County garage conversion path
+      - Can I use the county fast-track?
+      - What blocks LA County approval?
+  - key: contract_city
+    label: Contract City served through LA County
+    routing_notes: Confirm whether records, counter, and review are handled through county systems or local overlays before quoting a path.
+    front_door_pages:
+      - Contract city ADU screening
+      - What jurisdiction controls my lot?
+  - key: pasadena
+    label: Pasadena
+    routing_notes: Treat Pasadena as its own city-specific route. Do not assume LA City or county standard paths apply unchanged.
+    front_door_pages:
+      - Pasadena ADU screening
+      - Pasadena garage conversion review
+  - key: arcadia
+    label: Arcadia
+    routing_notes: Arcadia should be handled as a city-specific route with its own permitting and review expectations.
+    front_door_pages:
+      - Arcadia ADU screening
+      - Arcadia permit blocker review
+  - key: monterey_park
+    label: Monterey Park
+    routing_notes: Monterey Park should be split out in content and intake because the city route is not the same as LA City or unincorporated county.
+    front_door_pages:
+      - Monterey Park ADU screening
+      - Monterey Park garage conversion permit path
+  - key: sgv_other
+    label: Other SGV City
+    routing_notes: Route to manual confirmation before promising any city-specific path.
+    front_door_pages:
+      - SGV jurisdiction screening
+      - Which city controls my permit path?
+

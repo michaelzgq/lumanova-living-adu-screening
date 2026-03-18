@@ -1,0 +1,24 @@
+# Copy values from this file into your shell before starting the app.
+# Example:
+#   export ADU_LEAD_WEBHOOK_URL="https://hooks.zapier.com/hooks/catch/..."
+#   export ADU_LEAD_WEBHOOK_BEARER_TOKEN="your-token-if-needed"
+#   export ADU_LEAD_WEBHOOK_HEADERS_JSON='{"X-Workspace":"lumanova-living"}'
+#   export ADU_LEAD_WEBHOOK_TIMEOUT_SECONDS="8"
+#   export ADU_FORCE_PUBLIC_ONLY="true"
+#   export ADU_ADMIN_PASSWORD="set-a-real-password"
+#
+# Recommended Google Sheets path:
+#   1. Deploy /integrations/google_sheets_webhook/Code.gs as a Google Apps Script web app
+#   2. Use a URL like:
+#      https://script.google.com/macros/s/DEPLOYMENT_ID/exec?token=replace-me
+#
+# Then run:
+#   cd "/Users/mikezhang/Documents/lumanova living/adu_screening_mvp"
+#   zsh run_app.command
+
+ADU_LEAD_WEBHOOK_URL=""
+ADU_LEAD_WEBHOOK_BEARER_TOKEN=""
+ADU_LEAD_WEBHOOK_HEADERS_JSON=""
+ADU_LEAD_WEBHOOK_TIMEOUT_SECONDS="8"
+ADU_FORCE_PUBLIC_ONLY="false"
+ADU_ADMIN_PASSWORD=""
