@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ui-lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,205 +9,237 @@
       content="A practical LA and SGV garage conversion guide covering common cost drivers, blocker signals, and why homeowners should screen their property before design or construction."
     />
     <link rel="stylesheet" href="./site.css" />
+    <script src="./site.js" defer></script>
   </head>
   <body>
     <div class="site-shell">
       <header class="site-nav">
         <div class="brand-lockup">
           <div class="brand-name">Lumanova Living</div>
-          <div class="brand-tag">Property screening for LA and SGV homeowners</div>
+          <div class="brand-tag">
+            <span data-lang="en">Property screening for LA and SGV homeowners</span>
+            <span data-lang="zh">洛杉矶与圣盖博谷业主的物业预筛工具</span>
+          </div>
         </div>
         <nav class="nav-links">
-          <a class="nav-link" href="./index.html">Home</a>
-          <a class="nav-link is-active" href="./garage-guide.html">Garage Guide</a>
-          <a class="nav-link" href="./legalization.html">Legalization</a>
-          <a class="nav-link" href="./city-guide.html">City Guide</a>
-          <a class="nav-link" href="./case-library.html">Case Library</a>
-          <a class="nav-link" href="./gallery.html">Gallery</a>
-          <a class="nav-link" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=garage">Property Screen</a>
+          <a class="nav-link" href="./index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
+          <a class="nav-link is-active" href="./garage-guide.html"><span data-lang="en">Garage Guide</span><span data-lang="zh">车库指南</span></a>
+          <a class="nav-link" href="./legalization.html"><span data-lang="en">Legalization</span><span data-lang="zh">合法化</span></a>
+          <a class="nav-link" href="./city-guide.html"><span data-lang="en">City Guide</span><span data-lang="zh">城市入口</span></a>
+          <a class="nav-link" href="./case-library.html"><span data-lang="en">Case Library</span><span data-lang="zh">案例库</span></a>
+          <a class="nav-link" href="./gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">作品展示</span></a>
+          <a class="nav-link" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=garage"><span data-lang="en">Property Screen</span><span data-lang="zh">开始预筛</span></a>
+          <div class="lang-switch" aria-label="Language switch">
+            <button class="lang-button" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+            <button class="lang-button" type="button" data-set-lang="zh" aria-pressed="false">中文</button>
+          </div>
         </nav>
       </header>
 
       <section class="hero page-head">
-        <div class="eyebrow">Los Angeles · SGV · Garage Conversion Guide</div>
+        <div class="eyebrow">
+          <span data-lang="en">Los Angeles · SGV · Garage Conversion Guide</span>
+          <span data-lang="zh">洛杉矶 · 圣盖博谷 · 车库改造指南</span>
+        </div>
         <h1>
-          Garage conversion guide for LA and SGV homeowners
-          <span class="zh-hero" lang="zh-CN">面向洛杉矶和圣盖博谷业主的车库改造前置指南：先看城市入口和 blocker，再谈设计和报价。</span>
+          <span data-lang="en">Garage conversion guide for LA and SGV homeowners</span>
+          <span data-lang="zh">给洛杉矶和圣盖博谷业主的车库改造前置指南</span>
         </h1>
         <p class="page-sub">
-          Most homeowners ask the same questions first: How much could this cost, how long could permits take,
-          and what makes a project more complicated? Use this page as a practical starting point, then run the
-          property screen before you spend money on plans.
-        </p>
-        <p class="zh-copy" lang="zh-CN">
-          很多业主最先问的是大概要花多少钱、多久能拿 permit、什么情况会变复杂。但在真正进入 drawings 或 contractor pricing 之前，
-          更重要的是先弄清楚 jurisdiction、existing condition 和历史记录。
+          <span data-lang="en">
+            Most homeowners ask the same questions first: How much could this cost, how long could permits take,
+            and what makes a project more complicated? Use this page as a practical starting point, then run the
+            property screen before you spend money on plans.
+          </span>
+          <span data-lang="zh">
+            大多数业主最先问的是要花多少钱、permit 可能多久，以及什么情况会让项目变复杂。这个页面先帮你建立判断框架，
+            然后再去做物业预筛，不要一开始就先花设计费。
+          </span>
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=garage">Start garage screen</a>
-          <a class="button secondary" href="./index.html">Back to home</a>
+          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=garage"><span data-lang="en">Start garage screen</span><span data-lang="zh">开始车库预筛</span></a>
+          <a class="button secondary" href="./index.html"><span data-lang="en">Back to home</span><span data-lang="zh">返回首页</span></a>
         </div>
         <div class="pill-row">
-          <span class="pill">Attached garage</span>
-          <span class="pill">Detached garage</span>
-          <span class="pill">LA and SGV screening</span>
-          <span class="pill">Early blocker review</span>
+          <span class="pill"><span data-lang="en">Attached garage</span><span data-lang="zh">连体车库</span></span>
+          <span class="pill"><span data-lang="en">Detached garage</span><span data-lang="zh">独立车库</span></span>
+          <span class="pill"><span data-lang="en">LA and SGV screening</span><span data-lang="zh">LA 与 SGV 预筛</span></span>
+          <span class="pill"><span data-lang="en">Early blocker review</span><span data-lang="zh">前置 blocker 判断</span></span>
         </div>
       </section>
 
       <section class="section">
-        <h2>The first question is usually not cost. It is jurisdiction.</h2>
-        <p class="section-kicker zh-copy" lang="zh-CN">
-          车库改造类客户最容易一开始就问成本，但销售更该先判断：这个地址到底是 LA City、LA County，还是 Arcadia、San Gabriel、
-          Monterey Park、Pasadena 这样的独立城市。入口错了，后面的 permit 话术就会全错。
+        <h2><span data-lang="en">The first question is usually not cost. It is jurisdiction.</span><span data-lang="zh">最先该问的通常不是价格，而是 jurisdiction。</span></h2>
+        <p class="section-kicker" data-lang="en">
+          Garage-conversion conversations often start with cost, but the more valuable first question is whether
+          the property belongs to LA City, LA County, or a separate SGV city system.
+        </p>
+        <p class="section-kicker" data-lang="zh">
+          车库改造类客户很容易一开始就问成本，但更关键的问题是：这个地址到底属于 LA City、LA County，还是 Arcadia、San Gabriel、
+          Monterey Park、Pasadena 这样的独立城市。入口错了，后面的 permit 话术就会跟着错。
         </p>
         <div class="grid-2">
           <article class="card">
-            <h3>LA City garage questions</h3>
-            <p>LA City often means LADBS plus Planning context, and some garage or existing-unit questions split into very different paths depending on the actual records and property type.</p>
-            <p class="zh-copy" lang="zh-CN">LA City 常见入口是 `LADBS + Planning`，但具体是 clean garage path、UDU 相关问题，还是一般 compliance / permit 问题，要看真实记录。</p>
+            <h3><span data-lang="en">LA City garage questions</span><span data-lang="zh">LA City 车库问题</span></h3>
+            <p data-lang="en">LA City often means LADBS plus Planning context, and some garage or existing-unit questions split into very different paths depending on the actual records and property type.</p>
+            <p data-lang="zh">LA City 常见入口是 LADBS 加上 Planning，但到底更像标准 garage path、UDU 相关问题，还是一般 compliance / permit 问题，要看真实记录和物业类型。</p>
           </article>
           <article class="card">
-            <h3>County and SGV city questions</h3>
-            <p>Unincorporated LA County, Arcadia, San Gabriel, Monterey Park, and Pasadena are not one interchangeable system. A garage path that sounds simple in one city can become a different review in another.</p>
-            <p class="zh-copy" lang="zh-CN">County 和 SGV 独立城市不能混讲。某个城市看起来是标准车库改造，在另一个城市可能就变成更重的 review。</p>
+            <h3><span data-lang="en">County and SGV city questions</span><span data-lang="zh">County 与 SGV 城市问题</span></h3>
+            <p data-lang="en">Unincorporated LA County, Arcadia, San Gabriel, Monterey Park, and Pasadena are not one interchangeable system. A garage path that sounds simple in one city can become a different review in another.</p>
+            <p data-lang="zh">County 和 SGV 独立城市不能混讲。某个城市里看起来是标准车库改造，在另一个城市里可能就变成更重的 review 路径。</p>
           </article>
         </div>
-        <p class="micro">
-          A Los Angeles mailing address does not automatically mean LA City. Pasadena also cannot be explained as if it were LA City.
-        </p>
+        <p class="micro" data-lang="en">A Los Angeles mailing address does not automatically mean LA City. Pasadena also cannot be explained as if it were LA City.</p>
+        <p class="micro" data-lang="zh">邮寄地址写 Los Angeles，不等于一定属于 LA City。Pasadena 也不能按 LA City 的逻辑去解释。</p>
       </section>
 
       <section class="section">
-        <h2>What usually moves project cost up or down</h2>
-        <p class="section-kicker zh-copy" lang="zh-CN">
-          这里不直接挂固定报价，因为真实成本不是一句 “garage conversion 多少钱” 就能回答。更关键的是先看 scope、城市审核、旧记录和隐藏 blocker。
-        </p>
-        <ul>
+        <h2><span data-lang="en">What usually moves project cost up or down</span><span data-lang="zh">通常哪些因素会把成本拉高或压低</span></h2>
+        <p class="section-kicker" data-lang="en">We are not publishing fixed ranges here. Real cost is shaped by scope, city review, legacy work, and hidden blockers.</p>
+        <p class="section-kicker" data-lang="zh">这里不直接挂固定报价，因为真实成本不是一句“garage conversion 多少钱”就能回答。更关键的是先看 scope、城市审核、旧记录和隐藏 blocker。</p>
+        <ul data-lang="en">
           <li>How clean or messy the existing garage and permit history look</li>
           <li>Whether utilities, service upgrades, or extra site work are needed</li>
           <li>Whether the project stays close to a clean garage conversion or expands into a bigger scope</li>
           <li>Which city or jurisdiction reviews the project and how much friction the path creates</li>
           <li>Whether old additions, corrections, hillside issues, or other blocker signals appear early</li>
         </ul>
-        <p class="micro">
-          We are not publishing fixed price ranges here yet. Actual cost depends on scope, records, city review, utilities, and existing site conditions.
-        </p>
+        <ul data-lang="zh">
+          <li>现有车库和 permit history 看起来有多干净或多混乱</li>
+          <li>是否需要 utilities、service upgrade 或额外场地工作</li>
+          <li>项目是接近标准车库改造，还是已经扩大成更重的 scope</li>
+          <li>由哪个城市或 jurisdiction 来审核，以及会带来多少 friction</li>
+          <li>是否一开始就出现旧加建、correction、hillside 等 blocker 信号</li>
+        </ul>
+        <p class="micro" data-lang="en">Actual cost depends on scope, records, city review, utilities, and existing site conditions.</p>
+        <p class="micro" data-lang="zh">真实成本取决于 scope、records、城市审核、utilities 和现场条件。</p>
       </section>
 
       <section class="section">
-        <h2>What usually makes a project more complex</h2>
-        <p class="section-kicker zh-copy" lang="zh-CN">
-          真正把项目拖复杂的，往往不是装修本身，而是 hillside、basement、旧加建、无 permit 施工和 correction / violation 这类历史问题。
-        </p>
-        <ul>
+        <h2><span data-lang="en">What usually makes a project more complex</span><span data-lang="zh">通常哪些情况会让项目变复杂</span></h2>
+        <p class="section-kicker" data-lang="en">The biggest complexity drivers are usually not the finish choices. They are site conditions, old work, and records friction.</p>
+        <p class="section-kicker" data-lang="zh">真正把项目拖复杂的，往往不是装修本身，而是 hillside、basement、旧加建、无 permit 施工和 correction / violation 这类历史问题。</p>
+        <ul data-lang="en">
           <li>Hillside or special slope conditions</li>
           <li>Basement or below-grade living space</li>
           <li>Old additions without permits</li>
           <li>Existing unpermitted work or unclear permit history</li>
           <li>Correction comments, prior notices, or existing records mismatch</li>
         </ul>
-        <p class="micro">
-          In San Gabriel and other older SGV housing pockets, legacy work and records friction often matter more than the first construction question.
-        </p>
+        <ul data-lang="zh">
+          <li>Hillside 或特殊坡地条件</li>
+          <li>Basement 或低于地面的居住空间</li>
+          <li>没有 permit 的旧加建</li>
+          <li>现有无 permit 施工或不清楚的 permit history</li>
+          <li>旧 correction、notice 或 records 对不上</li>
+        </ul>
+        <p class="micro" data-lang="en">In San Gabriel and other older SGV housing pockets, legacy work and records friction often matter more than the first construction question.</p>
+        <p class="micro" data-lang="zh">在 San Gabriel 和其他老房较多的 SGV 区域，历史遗留问题和 records friction 往往比第一句施工问题更重要。</p>
       </section>
 
       <section class="section">
-        <h2>City patterns homeowners should not mix together</h2>
-        <p class="section-kicker zh-copy" lang="zh-CN">
-          这几座城市听起来都在 SGV，但销售和客户不能把它们讲成一套统一规则。先找对城市官网，再谈下一步。
-        </p>
+        <h2><span data-lang="en">City patterns homeowners should not mix together</span><span data-lang="zh">这些城市的逻辑不要混着讲</span></h2>
+        <p class="section-kicker" data-lang="en">These cities all sound close on a map, but they should not be explained as one interchangeable playbook.</p>
+        <p class="section-kicker" data-lang="zh">这几座城市听起来都在 SGV，但销售和客户不能把它们讲成一套统一规则。先找对城市官网，再谈下一步。</p>
         <div class="grid-3">
           <article class="card">
             <h3>Arcadia</h3>
-            <p>Arcadia can look cleaner for standard ADU-style exploration, but project fit still depends on the lot and category. A standard-sounding garage idea is not automatically approved just because the city has clearer public entry points.</p>
-            <p class="zh-copy" lang="zh-CN">Arcadia 的 ADU 入口相对清楚，甚至有预批准 ADU 这类卖点，但不是所有 garage 情况都能直接套标准路径。</p>
+            <p data-lang="en">Arcadia can look cleaner for standard ADU-style exploration, but project fit still depends on the lot and category. A standard-sounding garage idea is not automatically approved just because the city has clearer public entry points.</p>
+            <p data-lang="zh">Arcadia 的 ADU 入口相对清楚，但不是所有 garage 情况都能直接套标准路径，还是要看地块和项目类型。</p>
           </article>
           <article class="card">
             <h3>Monterey Park and San Gabriel</h3>
-            <p>Older homes and historical work are common, so record history can matter as much as the physical garage itself.</p>
-            <p class="zh-copy" lang="zh-CN">Monterey Park 和 San Gabriel 常见老屋和历史遗留问题，很多时候记录和现状比施工本身更重要。</p>
+            <p data-lang="en">Older homes and historical work are common, so record history can matter as much as the physical garage itself.</p>
+            <p data-lang="zh">Monterey Park 和 San Gabriel 常见老屋和历史遗留问题，很多时候 records 和现状比施工本身更重要。</p>
           </article>
           <article class="card">
             <h3>Pasadena</h3>
-            <p>Pasadena has its own path and cannot be treated like LA City. Historic or city-specific review can change what looks simple on the surface.</p>
-            <p class="zh-copy" lang="zh-CN">Pasadena 不能按 LA City 去解释，尤其碰到历史保护或 city-specific review 时，销售不能先替客户下结论。</p>
+            <p data-lang="en">Pasadena has its own path and cannot be treated like LA City. Historic or city-specific review can change what looks simple on the surface.</p>
+            <p data-lang="zh">Pasadena 不能按 LA City 去解释，尤其碰到历史保护或 city-specific review 时，更不能先替客户下结论。</p>
           </article>
         </div>
         <div class="section-actions">
-          <a class="button secondary" href="./city-guide.html">Open city / official entry guide</a>
+          <a class="button secondary" href="./city-guide.html"><span data-lang="en">Open city / official entry guide</span><span data-lang="zh">打开城市 / 官方入口指南</span></a>
         </div>
       </section>
 
       <section class="section">
-        <h2>What homeowners usually want to know first</h2>
-        <p class="section-kicker zh-copy" lang="zh-CN">
-          客户真正关心的不是只有价格，而是这个 garage 项目到底像不像标准路径，会不会碰到 utilities、records 或 city review friction。
-        </p>
+        <h2><span data-lang="en">What homeowners usually want to know first</span><span data-lang="zh">业主最先真正想知道的是什么</span></h2>
+        <p class="section-kicker" data-lang="en">Most homeowners are not just asking for a number. They want to know whether the project still looks straightforward.</p>
+        <p class="section-kicker" data-lang="zh">客户真正关心的不是只有价格，而是这个 garage 项目到底像不像标准路径，会不会碰到 utilities、records 或 city review friction。</p>
         <div class="grid-3">
           <article class="card">
-            <h3>Is this likely a clean garage path?</h3>
-            <p>Some properties stay close to a cleaner garage-conversion scenario. Others immediately show record, site, or scope friction.</p>
+            <h3><span data-lang="en">Is this likely a clean garage path?</span><span data-lang="zh">这更像标准车库路径吗？</span></h3>
+            <p data-lang="en">Some properties stay close to a cleaner garage-conversion scenario. Others immediately show record, site, or scope friction.</p>
+            <p data-lang="zh">有些物业更接近干净的 garage conversion 路径，另一些一开始就会暴露 records、site 或 scope friction。</p>
           </article>
           <article class="card">
-            <h3>What slows a project down?</h3>
-            <p>Hillside conditions, utility work, old additions, and mismatched records tend to change both timing and next-step strategy.</p>
+            <h3><span data-lang="en">What slows a project down?</span><span data-lang="zh">什么会让项目慢下来？</span></h3>
+            <p data-lang="en">Hillside conditions, utility work, old additions, and mismatched records tend to change both timing and next-step strategy.</p>
+            <p data-lang="zh">Hillside、utility work、旧加建和 records 对不上，都会改变时间和下一步策略。</p>
           </article>
           <article class="card">
-            <h3>Should I get contractor quotes now?</h3>
-            <p>Not as a first move. A better first move is screening the property so you know whether the project looks standard, blocked, or heavier than expected.</p>
+            <h3><span data-lang="en">Should I get contractor quotes now?</span><span data-lang="zh">现在就该找 contractor 报价吗？</span></h3>
+            <p data-lang="en">Not as a first move. A better first move is screening the property so you know whether the project looks standard, blocked, or heavier than expected.</p>
+            <p data-lang="zh">不该作为第一步。更好的第一步是先做物业预筛，看清项目更像标准路径、受阻路径，还是比预期更重的场景。</p>
           </article>
         </div>
       </section>
 
       <section class="section">
-        <h2>Why screening first matters</h2>
-        <p>
+        <h2><span data-lang="en">Why screening first matters</span><span data-lang="zh">为什么先预筛更重要</span></h2>
+        <p data-lang="en">
           The right first step is not getting three random construction quotes. The right first step is finding out
           whether the property looks closer to a standard path, a blocker-heavy review, or a legalization-type case.
         </p>
-        <p class="zh-copy" lang="zh-CN">
+        <p data-lang="zh">
           正确的第一步通常不是去找三个 contractor 乱比价，而是先判断这个项目更像标准 garage path、blocker-heavy review，
           还是已经偏合法化 / 救援场景。
         </p>
         <div class="section-actions">
-          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=garage">Start garage conversion screen</a>
-          <a class="button secondary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/">Open general property screen</a>
-          <a class="button secondary" href="./city-guide.html">Check city entry points</a>
+          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=garage"><span data-lang="en">Start garage conversion screen</span><span data-lang="zh">开始车库改造预筛</span></a>
+          <a class="button secondary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/"><span data-lang="en">Open general property screen</span><span data-lang="zh">打开通用物业预筛</span></a>
+          <a class="button secondary" href="./city-guide.html"><span data-lang="en">Check city entry points</span><span data-lang="zh">查看城市入口</span></a>
         </div>
       </section>
 
       <section class="section">
-        <h2>FAQ</h2>
+        <h2><span data-lang="en">FAQ</span><span data-lang="zh">常见问题</span></h2>
         <div class="faq-item">
-          <h3>Does this page give me a price quote?</h3>
-          <p>No. This page is meant to help you understand what usually affects scope and complexity. Real cost depends on the property, records, city review, utilities, and hidden blockers.</p>
+          <h3><span data-lang="en">Does this page give me a price quote?</span><span data-lang="zh">这个页面会直接给报价吗？</span></h3>
+          <p data-lang="en">No. This page is meant to help you understand what usually affects scope and complexity. Real cost depends on the property, records, city review, utilities, and hidden blockers.</p>
+          <p data-lang="zh">不会。这个页面只是帮助你理解哪些因素会影响 scope 和复杂度。真实成本要看物业、records、城市审核、utilities 和隐藏 blocker。</p>
         </div>
         <div class="faq-item">
-          <h3>Is every garage eligible?</h3>
-          <p>No. Even before detailed design, some properties show signs that they belong in a blocker-diagnosis path instead of a cleaner standard path.</p>
+          <h3><span data-lang="en">Is every garage eligible?</span><span data-lang="zh">是不是每个车库都可以做？</span></h3>
+          <p data-lang="en">No. Even before detailed design, some properties show signs that they belong in a blocker-diagnosis path instead of a cleaner standard path.</p>
+          <p data-lang="zh">不是。即使还没进入详细设计，有些物业一开始就会显露 blocker 信号，更像诊断路径，不像标准路径。</p>
         </div>
         <div class="faq-item">
-          <h3>Are LA City, Pasadena, Arcadia, and SGV garage rules basically the same?</h3>
-          <p>No. The state framework may sound similar, but the real entry point, review friction, and likely next step still depend on the actual jurisdiction and property conditions.</p>
+          <h3><span data-lang="en">Are LA City, Pasadena, Arcadia, and SGV garage rules basically the same?</span><span data-lang="zh">LA City、Pasadena、Arcadia 和 SGV 规则差不多吗？</span></h3>
+          <p data-lang="en">No. The state framework may sound similar, but the real entry point, review friction, and likely next step still depend on the actual jurisdiction and property conditions.</p>
+          <p data-lang="zh">不一样。州层框架听起来可能相似，但真正的入口、review friction 和下一步还是取决于具体 jurisdiction 和物业条件。</p>
         </div>
         <div class="faq-item">
-          <h3>What happens after I submit the screen?</h3>
-          <p>The intake helps route the project so the team has a better idea whether to treat it like a cleaner garage path or a heavier review case before moving deeper.</p>
+          <h3><span data-lang="en">What happens after I submit the screen?</span><span data-lang="zh">提交预筛之后会发生什么？</span></h3>
+          <p data-lang="en">The intake helps route the project so the team has a better idea whether to treat it like a cleaner garage path or a heavier review case before moving deeper.</p>
+          <p data-lang="zh">这个 intake 会先帮团队判断项目更像干净的 garage 路径，还是更重的 review 场景，再决定后续怎么跟进。</p>
         </div>
       </section>
 
       <footer class="site-footer">
         <div class="footer-copy">
-          This page is built for homeowners in Los Angeles and the San Gabriel Valley who want a practical garage-conversion starting point before they commit to plans or contractor pricing.
+          <span data-lang="en">This page is built for homeowners in Los Angeles and the San Gabriel Valley who want a practical garage-conversion starting point before they commit to plans or contractor pricing.</span>
+          <span data-lang="zh">这个页面面向洛杉矶和圣盖博谷业主，帮助你在投入设计费或 contractor 报价前，先找到更稳的车库改造起点。</span>
         </div>
         <div class="footer-links">
-          <a href="./index.html">Home</a>
-          <a href="./legalization.html">Legalization</a>
-          <a href="./city-guide.html">City Guide</a>
-          <a href="./case-library.html">Case Library</a>
-          <a href="./gallery.html">Gallery</a>
-          <a href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=garage">Property Screen</a>
+          <a href="./index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
+          <a href="./legalization.html"><span data-lang="en">Legalization</span><span data-lang="zh">合法化</span></a>
+          <a href="./city-guide.html"><span data-lang="en">City Guide</span><span data-lang="zh">城市入口</span></a>
+          <a href="./case-library.html"><span data-lang="en">Case Library</span><span data-lang="zh">案例库</span></a>
+          <a href="./gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">图库</span></a>
+          <a href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=garage"><span data-lang="en">Property Screen</span><span data-lang="zh">物业预筛</span></a>
         </div>
       </footer>
     </div>

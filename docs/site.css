@@ -78,6 +78,33 @@ a {
   gap: 10px;
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.lang-button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.lang-button.is-active,
+.lang-button[aria-pressed="true"] {
+  background: var(--text);
+  color: #fff;
+}
+
 .nav-link {
   text-decoration: none;
   padding: 10px 14px;
@@ -91,6 +118,26 @@ a {
 .nav-link.is-active {
   color: var(--text);
   background: rgba(255, 255, 255, 0.72);
+}
+
+[data-lang="zh"] {
+  display: none !important;
+}
+
+html[data-ui-lang="en"] [data-lang="en"] {
+  display: revert !important;
+}
+
+html[data-ui-lang="en"] [data-lang="zh"] {
+  display: none !important;
+}
+
+html[data-ui-lang="zh"] [data-lang="zh"] {
+  display: revert !important;
+}
+
+html[data-ui-lang="zh"] [data-lang="en"] {
+  display: none !important;
 }
 
 .hero {
@@ -479,6 +526,10 @@ a {
 
   .nav-links {
     justify-content: flex-start;
+  }
+
+  .lang-switch {
+    order: 99;
   }
 
   .hero,

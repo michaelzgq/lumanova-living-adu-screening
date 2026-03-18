@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ui-lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,177 +9,249 @@
       content="Screen an unpermitted garage conversion, ADU, or existing unit issue before spending on architects, attorneys, or construction. Built for Los Angeles and SGV homeowners."
     />
     <link rel="stylesheet" href="./site.css" />
+    <script src="./site.js" defer></script>
   </head>
   <body>
     <div class="site-shell">
       <header class="site-nav">
         <div class="brand-lockup">
           <div class="brand-name">Lumanova Living</div>
-          <div class="brand-tag">Property screening for LA and SGV homeowners</div>
+          <div class="brand-tag">
+            <span data-lang="en">Property screening for LA and SGV homeowners</span>
+            <span data-lang="zh">洛杉矶与圣盖博谷业主的物业预筛工具</span>
+          </div>
         </div>
         <nav class="nav-links">
-          <a class="nav-link" href="./index.html">Home</a>
-          <a class="nav-link" href="./garage-guide.html">Garage Guide</a>
-          <a class="nav-link is-active" href="./legalization.html">Legalization</a>
-          <a class="nav-link" href="./city-guide.html">City Guide</a>
-          <a class="nav-link" href="./case-library.html">Case Library</a>
-          <a class="nav-link" href="./gallery.html">Gallery</a>
-          <a class="nav-link" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization">Property Screen</a>
+          <a class="nav-link" href="./index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
+          <a class="nav-link" href="./garage-guide.html"><span data-lang="en">Garage Guide</span><span data-lang="zh">车库指南</span></a>
+          <a class="nav-link is-active" href="./legalization.html"><span data-lang="en">Legalization</span><span data-lang="zh">合法化</span></a>
+          <a class="nav-link" href="./city-guide.html"><span data-lang="en">City Guide</span><span data-lang="zh">城市入口</span></a>
+          <a class="nav-link" href="./case-library.html"><span data-lang="en">Case Library</span><span data-lang="zh">案例库</span></a>
+          <a class="nav-link" href="./gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">作品展示</span></a>
+          <a class="nav-link" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization"><span data-lang="en">Property Screen</span><span data-lang="zh">开始预筛</span></a>
+          <div class="lang-switch" aria-label="Language switch">
+            <button class="lang-button" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+            <button class="lang-button" type="button" data-set-lang="zh" aria-pressed="false">中文</button>
+          </div>
         </nav>
       </header>
 
       <section class="hero page-head">
-        <div class="eyebrow">Los Angeles · SGV · Legalization Screening</div>
-        <h1>
-          Have an unpermitted unit or old garage conversion issue?
-          <span class="zh-hero" lang="zh-CN">如果你家的旧车库、detached room 或 sale-time 问题已经暴露出 permit friction，这个入口是先分诊、不是先承诺。</span>
-        </h1>
-        <p class="page-sub">
+        <div class="eyebrow">
+          <span data-lang="en">Los Angeles · SGV · Legalization Screening</span>
+          <span data-lang="zh">洛杉矶 · 圣盖博谷 · 合法化预筛</span>
+        </div>
+        <h1 data-lang="en">Have an unpermitted unit or old garage conversion issue?</h1>
+        <h1 data-lang="zh">如果旧车库、detached room 或 sale-time 问题已经暴露出 permit friction，先做分诊，不要先承诺。</h1>
+        <p class="page-sub" data-lang="en">
           Start with a property screen before you spend money on architects, attorneys, or construction.
           This intake is built for Los Angeles and SGV homeowners who need an early read on whether a project
           looks like a standard path, a blocker-heavy review, or a rescue / legalization case. Not every
           existing issue belongs in the same city program, and not every old unit should be described the same way.
         </p>
-        <p class="zh-copy" lang="zh-CN">
-          合法化 / 现有问题类项目最怕的是一开始就把话说死。真正更稳的做法，是先看地址、城市入口、物业类型和旧 records，
-          再决定更像 UDU、ADU、一般 permit / compliance，还是更重的 rescue 路径。
+        <p class="page-sub" data-lang="zh">
+          合法化 / 现有问题类项目最怕的是一开始就把话说死。更稳的做法，是先看地址、城市入口、物业类型和旧 records，
+          再判断更像 UDU、ADU、一般 permit / compliance，还是更重的 rescue 路径。
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization">Start the legalization screen</a>
-          <a class="button secondary" href="./index.html">Back to home</a>
+          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization"><span data-lang="en">Start the legalization screen</span><span data-lang="zh">开始合法化预筛</span></a>
+          <a class="button secondary" href="./index.html"><span data-lang="en">Back to home</span><span data-lang="zh">返回首页</span></a>
         </div>
         <div class="pill-row">
-          <span class="pill">Converted garage</span>
-          <span class="pill">Old detached room</span>
-          <span class="pill">Correction notice</span>
-          <span class="pill">Sale-time permit issue</span>
+          <span class="pill"><span data-lang="en">Converted garage</span><span data-lang="zh">旧车库改住</span></span>
+          <span class="pill"><span data-lang="en">Old detached room</span><span data-lang="zh">旧 detached room</span></span>
+          <span class="pill"><span data-lang="en">Correction notice</span><span data-lang="zh">整改通知</span></span>
+          <span class="pill"><span data-lang="en">Sale-time permit issue</span><span data-lang="zh">出售时 permit 问题</span></span>
         </div>
       </section>
 
       <section class="section">
-        <h2>Start with the city path, not a generic legalization assumption</h2>
-        <p class="section-kicker zh-copy" lang="zh-CN">
-          合法化类客户最容易误以为 “只要在 LA 就都一样”，或者 “LA City 有 UDU，所以所有非法单元都能走”。这两种说法都不稳。
+        <h2 data-lang="en">Start with the city path, not a generic legalization assumption</h2>
+        <h2 data-lang="zh">先找对城市入口，不要先假设所有问题都叫“合法化”</h2>
+        <p class="section-kicker" data-lang="en">
+          Legalization customers most often get misled by two ideas: that every Los Angeles address works the same way,
+          or that one LA City program can explain every unpermitted unit.
+        </p>
+        <p class="section-kicker" data-lang="zh">
+          合法化类客户最容易误以为“只要在 LA 都一样”，或者“LA City 有 UDU，所以所有非法单元都能走”。这两种说法都不稳。
         </p>
         <div class="grid-2">
           <article class="card">
-            <h3>LA City has specific programs, but they are not universal</h3>
-            <p>LA City has official paths for certain unpermitted dwelling situations, but not every converted garage or detached room automatically belongs there.</p>
-            <p class="zh-copy" lang="zh-CN">LA City 的确有 UDU 这类官方入口，但它只适用于符合条件的 unpermitted units，不是所有旧 garage / detached room 都自动适用。</p>
+            <h3 data-lang="en">LA City has specific programs, but they are not universal</h3>
+            <h3 data-lang="zh">LA City 有特定项目入口，但不是万能答案</h3>
+            <p data-lang="en">LA City has official paths for certain unpermitted dwelling situations, but not every converted garage or detached room automatically belongs there.</p>
+            <p data-lang="zh">LA City 的确有 UDU 这类官方入口，但它只适用于符合条件的 unpermitted units，不是所有旧 garage / detached room 都自动适用。</p>
           </article>
           <article class="card">
-            <h3>County and SGV cities may route very differently</h3>
-            <p>Unincorporated County, Arcadia, San Gabriel, Monterey Park, and Pasadena do not share one legalization script. The same-sounding issue can require a different first move.</p>
-            <p class="zh-copy" lang="zh-CN">LA County、Arcadia、San Gabriel、Monterey Park、Pasadena 没有一套统一合法化剧本。听起来相似的问题，也可能要走完全不同的第一步。</p>
+            <h3 data-lang="en">County and SGV cities may route very differently</h3>
+            <h3 data-lang="zh">County 和 SGV 城市的入口可能完全不同</h3>
+            <p data-lang="en">Unincorporated County, Arcadia, San Gabriel, Monterey Park, and Pasadena do not share one legalization script. The same-sounding issue can require a different first move.</p>
+            <p data-lang="zh">LA County、Arcadia、San Gabriel、Monterey Park、Pasadena 没有一套统一合法化剧本。听起来相似的问题，也可能要走完全不同的第一步。</p>
           </article>
         </div>
-        <p class="micro">
+        <p class="micro" data-lang="en">
           A Los Angeles mailing address does not automatically mean LA City, and LA City does not mean every existing issue can be explained as a UDU case.
+        </p>
+        <p class="micro" data-lang="zh">
+          地址写 Los Angeles 不等于一定属于 LA City；属于 LA City 也不等于每个现有问题都能按 UDU 解释。
         </p>
       </section>
 
       <section class="section">
-        <h2>Common situations this screen is for</h2>
-        <p class="section-kicker zh-copy" lang="zh-CN">
-          只要是旧车库、无 permit 的 living unit、旧加建、sale-time issue、correction notice 这类高摩擦问题，都比普通 remodel 咨询更适合从这里进。
+        <h2 data-lang="en">Common situations this screen is for</h2>
+        <h2 data-lang="zh">这个入口最适合哪些情况</h2>
+        <p class="section-kicker" data-lang="en">
+          If the property already has an old garage conversion, unpermitted living area, correction history, or sale-time permit friction,
+          it usually belongs here before anyone treats it like a standard remodel inquiry.
+        </p>
+        <p class="section-kicker" data-lang="zh">
+          只要是旧车库、无 permit 的 living unit、旧加建、sale-time issue、correction notice 这类高摩擦问题，
+          都比普通 remodel 咨询更适合从这里进。
         </p>
         <div class="grid-3">
           <article class="card">
-            <h3>Converted garage with no permit</h3>
-            <p>If a garage was turned into living space years ago and records are unclear, start here first.</p>
+            <h3 data-lang="en">Converted garage with no permit</h3>
+            <h3 data-lang="zh">旧车库改成居住空间但没有 permit</h3>
+            <p data-lang="en">If a garage was turned into living space years ago and records are unclear, start here first.</p>
+            <p data-lang="zh">如果旧车库多年前被改成居住空间，而且 records 不清楚，先从这里进。</p>
           </article>
           <article class="card">
-            <h3>Old addition or detached room</h3>
-            <p>If part of the property was built without plans or final approval, screening helps clarify risk before deeper spend.</p>
+            <h3 data-lang="en">Old addition or detached room</h3>
+            <h3 data-lang="zh">旧加建或 detached room</h3>
+            <p data-lang="en">If part of the property was built without plans or final approval, screening helps clarify risk before deeper spend.</p>
+            <p data-lang="zh">如果物业某一部分没有 plans 或 final approval，预筛能先帮你看清风险，再决定要不要继续投入。</p>
           </article>
           <article class="card">
-            <h3>Correction notice or sale-time issue</h3>
-            <p>If an agent, buyer, lender, or city notice surfaced a permit problem, this is the right entry point.</p>
+            <h3 data-lang="en">Correction notice or sale-time issue</h3>
+            <h3 data-lang="zh">整改通知或出售时暴露的问题</h3>
+            <p data-lang="en">If an agent, buyer, lender, or city notice surfaced a permit problem, this is the right entry point.</p>
+            <p data-lang="zh">如果 agent、buyer、lender 或城市通知暴露出 permit 问题，这就是正确入口。</p>
           </article>
         </div>
       </section>
 
       <section class="section">
-        <h2>What this screen does</h2>
-        <p class="section-kicker zh-copy" lang="zh-CN">
+        <h2 data-lang="en">What this screen does</h2>
+        <h2 data-lang="zh">这个预筛真正解决什么</h2>
+        <p class="section-kicker" data-lang="en">
+          The value here is not a final answer. It is early sorting: issue type, city path, and relative risk,
+          so the team knows whether to call, review records, or escalate.
+        </p>
+        <p class="section-kicker" data-lang="zh">
           这个 screen 的价值，不是替客户下结论，而是先把问题类型、城市路径和风险等级分出来，让人工知道该继续联系、先查 records，还是升级处理。
         </p>
-        <ul>
+        <ul data-lang="en">
           <li>Collects the property address, project goal, and known blocker signals.</li>
           <li>Separates standard-looking ADU cases from cases that likely need deeper records review or a different compliance path.</li>
           <li>Gives the team enough context to decide whether to call, review, or escalate.</li>
         </ul>
-        <p class="micro">
+        <ul data-lang="zh">
+          <li>收集地址、项目目标和已知 blocker 信号。</li>
+          <li>把表面像标准 ADU 的情况，和更像需要 deeper records review 或不同 compliance 路径的情况分开。</li>
+          <li>让团队足够快地判断是继续联系、先查 records，还是直接升级处理。</li>
+        </ul>
+        <p class="micro" data-lang="en">
           This is a screening tool, not a final permit opinion, legal opinion, or engineering judgment.
+        </p>
+        <p class="micro" data-lang="zh">
+          这是分诊工具，不是最终 permit 结论、法律意见或工程判断。
         </p>
       </section>
 
       <section class="section">
-        <h2>What this screen does not do</h2>
-        <p class="section-kicker zh-copy" lang="zh-CN">
+        <h2 data-lang="en">What this screen does not do</h2>
+        <h2 data-lang="zh">这个预筛不会替代什么</h2>
+        <p class="section-kicker" data-lang="en">
+          The boundary matters. This is not legal advice, not a permit guarantee, and not an engineering opinion.
+          Hard cases still go back to city records, designers, architects, or a deeper internal review.
+        </p>
+        <p class="section-kicker" data-lang="zh">
           这里必须把边界说清：它不是法律意见、不是 permit guarantee，也不是工程判断。复杂项目最终还是要回到城市官网、designer、architect 或内部查询团队。
         </p>
         <div class="grid-2">
           <article class="card">
-            <h3>It does not replace city confirmation</h3>
-            <p>Use the screen to sort the project early, not to assume a final permit outcome without records review or official confirmation.</p>
+            <h3 data-lang="en">It does not replace city confirmation</h3>
+            <h3 data-lang="zh">它不能替代城市官方确认</h3>
+            <p data-lang="en">Use the screen to sort the project early, not to assume a final permit outcome without records review or official confirmation.</p>
+            <p data-lang="zh">预筛的作用是先分流，不是让你在没查 records、没做官方确认前就默认最终 permit 结果。</p>
           </article>
           <article class="card">
-            <h3>It does not turn a complex case into a simple one</h3>
-            <p>Older work, permit gaps, hillside conditions, and correction history still need real review even if the first intake looks promising.</p>
+            <h3 data-lang="en">It does not turn a complex case into a simple one</h3>
+            <h3 data-lang="zh">它不会把复杂案子自动变简单</h3>
+            <p data-lang="en">Older work, permit gaps, hillside conditions, and correction history still need real review even if the first intake looks promising.</p>
+            <p data-lang="zh">旧施工、permit gaps、hillside 条件和 correction history 这些问题，即使第一轮 intake 看起来还可以，也仍然需要真实 review。</p>
           </article>
         </div>
       </section>
 
       <section class="section">
-        <h2>What to do before you hire anyone</h2>
-        <p class="section-kicker zh-copy" lang="zh-CN">
+        <h2 data-lang="en">What to do before you hire anyone</h2>
+        <h2 data-lang="zh">在花钱请人之前先做什么</h2>
+        <p class="section-kicker" data-lang="en">
+          The most expensive mistake is paying architects, attorneys, or contractors before you know which city system and issue type you are actually dealing with.
+        </p>
+        <p class="section-kicker" data-lang="zh">
           在合法化类场景里，最怕的是先去花 architect / attorney / contractor 的钱，却还没搞清自己到底属于哪个城市系统、哪种问题类型。
         </p>
-        <ul>
+        <ul data-lang="en">
           <li>Do not assume an old converted unit will move like a clean new ADU project.</li>
           <li>Do not assume a seller-side or notice-driven issue automatically fits one LA City program without checking jurisdiction and property type.</li>
           <li>Do not spend on a full design package before understanding whether the existing conditions create extra friction.</li>
           <li>Do not call it “simple legalization” until the property details and records are screened.</li>
         </ul>
+        <ul data-lang="zh">
+          <li>不要把旧的 converted unit 当成干净的新 ADU 项目来理解。</li>
+          <li>不要在没确认 jurisdiction 和物业类型前，就默认 seller-side 或 notice-driven 问题能套进某个 LA City 项目。</li>
+          <li>不要在没搞清现状摩擦前，就先花完整设计费。</li>
+          <li>在地址、records 和问题类型还没筛清之前，不要随便叫它“简单合法化”。</li>
+        </ul>
         <div class="section-actions">
-          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization">Start the legalization screen</a>
-          <a class="button secondary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/">Open general property screen</a>
-          <a class="button secondary" href="./city-guide.html">Check city / official entry guide</a>
+          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization"><span data-lang="en">Start the legalization screen</span><span data-lang="zh">开始合法化预筛</span></a>
+          <a class="button secondary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/"><span data-lang="en">Open general property screen</span><span data-lang="zh">打开通用预筛</span></a>
+          <a class="button secondary" href="./city-guide.html"><span data-lang="en">Check city / official entry guide</span><span data-lang="zh">查看城市 / 官方入口</span></a>
         </div>
       </section>
 
       <section class="section">
-        <h2>FAQ</h2>
+        <h2><span data-lang="en">FAQ</span><span data-lang="zh">常见问题</span></h2>
         <div class="faq-item">
-          <h3>Should I call the city first?</h3>
-          <p>Not usually as a first move. It is often better to screen the property details and the likely issue type before treating the case like a simple city question.</p>
+          <h3 data-lang="en">Should I call the city first?</h3>
+          <h3 data-lang="zh">第一步要不要先打电话给城市部门？</h3>
+          <p data-lang="en">Not usually as a first move. It is often better to screen the property details and the likely issue type before treating the case like a simple city question.</p>
+          <p data-lang="zh">通常不建议把这当成第一步。更稳的是先把地址、现状和问题类型筛出来，再决定要不要把它当成简单的城市咨询。</p>
         </div>
         <div class="faq-item">
-          <h3>Does every LA City unpermitted unit go through the same path?</h3>
-          <p>No. LA City has specific official entry points, but not every converted garage, detached room, or old unit automatically fits the same program. Address, property type, and records still come first.</p>
+          <h3 data-lang="en">Does every LA City unpermitted unit go through the same path?</h3>
+          <h3 data-lang="zh">LA City 里的每个非法单元都走同一路径吗？</h3>
+          <p data-lang="en">No. LA City has specific official entry points, but not every converted garage, detached room, or old unit automatically fits the same program. Address, property type, and records still come first.</p>
+          <p data-lang="zh">不是。LA City 有特定官方入口，但不是每个 converted garage、detached room 或旧单元都自动套进同一个项目。地址、物业类型和 records 仍然要先看。</p>
         </div>
         <div class="faq-item">
-          <h3>Is this only for severe problem cases?</h3>
-          <p>No. It also works for people who just discovered that an older garage, detached room, or permit history may complicate a sale, refinance, or future project.</p>
+          <h3 data-lang="en">Is this only for severe problem cases?</h3>
+          <h3 data-lang="zh">这个入口只适合很严重的问题吗？</h3>
+          <p data-lang="en">No. It also works for people who just discovered that an older garage, detached room, or permit history may complicate a sale, refinance, or future project.</p>
+          <p data-lang="zh">不是。只要你刚发现旧车库、detached room 或 permit history 可能影响出售、再融资或未来项目，这个入口都适合。</p>
         </div>
         <div class="faq-item">
-          <h3>What happens after I submit?</h3>
-          <p>The intake is routed for manual review. If the case looks workable, someone can follow up with a better sense of whether it belongs in a cleaner path or a deeper review path.</p>
+          <h3 data-lang="en">What happens after I submit?</h3>
+          <h3 data-lang="zh">提交后会发生什么？</h3>
+          <p data-lang="en">The intake is routed for manual review. If the case looks workable, someone can follow up with a better sense of whether it belongs in a cleaner path or a deeper review path.</p>
+          <p data-lang="zh">这份 intake 会先进入人工审核。如果案子看起来还有推进空间，团队再根据情况决定它更像较干净路径还是更重的 review 路径。</p>
         </div>
       </section>
 
       <footer class="site-footer">
         <div class="footer-copy">
-          This page is built for Los Angeles and SGV homeowners dealing with older converted garages, detached rooms, or other permit-history problems that should be screened before deeper spend.
+          <span data-lang="en">This page is built for Los Angeles and SGV homeowners dealing with older converted garages, detached rooms, or other permit-history problems that should be screened before deeper spend.</span>
+          <span data-lang="zh">这个页面面向洛杉矶和圣盖博谷业主，适用于旧车库改住、detached room 或其他 permit 历史问题，在投入更深成本前先做预筛。</span>
         </div>
         <div class="footer-links">
-          <a href="./index.html">Home</a>
-          <a href="./garage-guide.html">Garage Guide</a>
-          <a href="./city-guide.html">City Guide</a>
-          <a href="./case-library.html">Case Library</a>
-          <a href="./gallery.html">Gallery</a>
-          <a href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization">Property Screen</a>
+          <a href="./index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
+          <a href="./garage-guide.html"><span data-lang="en">Garage Guide</span><span data-lang="zh">车库指南</span></a>
+          <a href="./city-guide.html"><span data-lang="en">City Guide</span><span data-lang="zh">城市入口</span></a>
+          <a href="./case-library.html"><span data-lang="en">Case Library</span><span data-lang="zh">案例库</span></a>
+          <a href="./gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">作品展示</span></a>
+          <a href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization"><span data-lang="en">Property Screen</span><span data-lang="zh">开始预筛</span></a>
         </div>
       </footer>
     </div>

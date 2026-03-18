@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ui-lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,139 +9,169 @@
       content="Before and after project visuals for representative bathroom, kitchen, bedroom, and garage improvements tied to the kinds of LA and SGV homeowner projects Lumanova Living screens."
     />
     <link rel="stylesheet" href="./site.css" />
+    <script src="./site.js" defer></script>
   </head>
   <body>
     <div class="site-shell">
       <header class="site-nav">
         <div class="brand-lockup">
           <div class="brand-name">Lumanova Living</div>
-          <div class="brand-tag">Property screening for LA and SGV homeowners</div>
+          <div class="brand-tag">
+            <span data-lang="en">Property screening for LA and SGV homeowners</span>
+            <span data-lang="zh">洛杉矶与圣盖博谷业主的物业预筛工具</span>
+          </div>
         </div>
         <nav class="nav-links">
-          <a class="nav-link" href="./index.html">Home</a>
-          <a class="nav-link" href="./garage-guide.html">Garage Guide</a>
-          <a class="nav-link" href="./legalization.html">Legalization</a>
-          <a class="nav-link" href="./city-guide.html">City Guide</a>
-          <a class="nav-link" href="./case-library.html">Case Library</a>
-          <a class="nav-link is-active" href="./gallery.html">Gallery</a>
-          <a class="nav-link" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/">Property Screen</a>
+          <a class="nav-link" href="./index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
+          <a class="nav-link" href="./garage-guide.html"><span data-lang="en">Garage Guide</span><span data-lang="zh">车库指南</span></a>
+          <a class="nav-link" href="./legalization.html"><span data-lang="en">Legalization</span><span data-lang="zh">合法化</span></a>
+          <a class="nav-link" href="./city-guide.html"><span data-lang="en">City Guide</span><span data-lang="zh">城市入口</span></a>
+          <a class="nav-link" href="./case-library.html"><span data-lang="en">Case Library</span><span data-lang="zh">案例库</span></a>
+          <a class="nav-link is-active" href="./gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">作品展示</span></a>
+          <a class="nav-link" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/"><span data-lang="en">Property Screen</span><span data-lang="zh">开始预筛</span></a>
+          <div class="lang-switch" aria-label="Language switch">
+            <button class="lang-button" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+            <button class="lang-button" type="button" data-set-lang="zh" aria-pressed="false">中文</button>
+          </div>
         </nav>
       </header>
 
       <section class="hero page-head">
-        <div class="eyebrow">Before &amp; After Visuals</div>
-        <h1>Representative project visuals for the kind of upgrade direction homeowners usually want to see first.</h1>
-        <p class="page-sub">
+        <div class="eyebrow">
+          <span data-lang="en">Before &amp; After Visuals</span>
+          <span data-lang="zh">前后对比素材</span>
+        </div>
+        <h1 data-lang="en">Representative project visuals for the kind of upgrade direction homeowners usually want to see first.</h1>
+        <h1 data-lang="zh">这些视觉素材帮助业主先看懂“升级方向”是什么样，而不是先把路径想成已经确定。</h1>
+        <p class="page-sub" data-lang="en">
           These visuals help customers picture finish level and improvement direction. They do not replace
           address screening, jurisdiction review, or project-specific feasibility. The point is to help a
           homeowner see the gap between current condition and a cleaner finished outcome before asking which
           path the property can really support.
         </p>
+        <p class="page-sub" data-lang="zh">
+          这些素材帮助客户理解 finish level 和升级方向。它们不能替代地址预筛、jurisdiction 判断或项目可行性分析。
+          目的只是让业主先看到“当前状态”和“更干净结果”之间的差距，再去判断物业到底适合哪条路径。
+        </p>
         <div class="hero-actions">
-          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/">Start the property screen</a>
-          <a class="button secondary" href="./case-library.html">Open case library</a>
+          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/"><span data-lang="en">Start the property screen</span><span data-lang="zh">开始物业预筛</span></a>
+          <a class="button secondary" href="./case-library.html"><span data-lang="en">Open case library</span><span data-lang="zh">打开案例库</span></a>
         </div>
         <div class="pill-row">
-          <span class="pill">Bathroom</span>
-          <span class="pill">Kitchen</span>
-          <span class="pill">Bedroom</span>
-          <span class="pill">Garage</span>
-          <span class="pill">Walkthrough clips</span>
+          <span class="pill"><span data-lang="en">Bathroom</span><span data-lang="zh">卫浴</span></span>
+          <span class="pill"><span data-lang="en">Kitchen</span><span data-lang="zh">厨房</span></span>
+          <span class="pill"><span data-lang="en">Bedroom</span><span data-lang="zh">卧室</span></span>
+          <span class="pill"><span data-lang="en">Garage</span><span data-lang="zh">车库</span></span>
+          <span class="pill"><span data-lang="en">Walkthrough clips</span><span data-lang="zh">视频走查</span></span>
         </div>
       </section>
 
       <section class="section">
-        <h2>How to use this page</h2>
+        <h2 data-lang="en">How to use this page</h2>
+        <h2 data-lang="zh">怎么使用这个页面</h2>
         <div class="grid-2">
           <article class="card">
-            <h3>Use this for visual reference</h3>
-            <p>It helps homeowners and agents show what a cleaner finish direction can look like when they are discussing whether a project feels worth exploring.</p>
+            <h3 data-lang="en">Use this for visual reference</h3>
+            <h3 data-lang="zh">把这里当成视觉参考</h3>
+            <p data-lang="en">It helps homeowners and agents show what a cleaner finish direction can look like when they are discussing whether a project feels worth exploring.</p>
+            <p data-lang="zh">它帮助业主和 agent 在讨论项目值不值得继续时，更直观地看到“更干净的完成方向”是什么样。</p>
           </article>
           <article class="card">
-            <h3>Do not use this as a construction promise</h3>
-            <p>Older records, city path, legal status, and site conditions still decide whether a property should move toward garage conversion, detached ADU exploration, or a heavier existing-issue review.</p>
+            <h3 data-lang="en">Do not use this as a construction promise</h3>
+            <h3 data-lang="zh">不要把它当成施工承诺</h3>
+            <p data-lang="en">Older records, city path, legal status, and site conditions still decide whether a property should move toward garage conversion, detached ADU exploration, or a heavier existing-issue review.</p>
+            <p data-lang="zh">旧 records、城市入口、合法状态和现场条件，仍然决定了这个物业到底更像车库改造、独立 ADU 探索，还是更重的现有问题审核。</p>
           </article>
         </div>
       </section>
 
       <section class="section">
-        <h2>Before &amp; after pairs</h2>
+        <h2 data-lang="en">Before &amp; after pairs</h2>
+        <h2 data-lang="zh">前后对比</h2>
         <div class="gallery-grid">
           <div>
-            <div class="section-label">Bathroom direction</div>
+            <div class="section-label"><span data-lang="en">Bathroom direction</span><span data-lang="zh">卫浴方向</span></div>
             <div class="gallery-pair">
               <article class="media-frame">
                 <img src="./assets/gallery/images/bathroom-after.jpg" alt="Bathroom after improvement" />
                 <div class="media-caption">
-                  <strong>After</strong>
-                  <p>Cleaner palette, brighter enclosure, and a stronger finished-living feel.</p>
+                  <strong><span data-lang="en">After</span><span data-lang="zh">改后</span></strong>
+                  <p data-lang="en">Cleaner palette, brighter enclosure, and a stronger finished-living feel.</p>
+                  <p data-lang="zh">配色更干净、围合更明亮，也更像完整的 finished living space。</p>
                 </div>
               </article>
               <article class="media-frame">
                 <img src="./assets/gallery/images/bathroom-before.jpg" alt="Bathroom before improvement" />
                 <div class="media-caption">
-                  <strong>Before</strong>
-                  <p>Functional but dated, crowded, and visually noisy.</p>
+                  <strong><span data-lang="en">Before</span><span data-lang="zh">改前</span></strong>
+                  <p data-lang="en">Functional but dated, crowded, and visually noisy.</p>
+                  <p data-lang="zh">可用，但显得老旧、拥挤，视觉也比较杂乱。</p>
                 </div>
               </article>
             </div>
           </div>
 
           <div>
-            <div class="section-label">Kitchen direction</div>
+            <div class="section-label"><span data-lang="en">Kitchen direction</span><span data-lang="zh">厨房方向</span></div>
             <div class="gallery-pair">
               <article class="media-frame">
-                <img src="./assets/gallery/images/kitchen-after.jpg" alt="Kitchen after improvement" />
+                <img src="./assets/gallery/images/kitchen-after.jpg" alt="Kitchen before remodel" />
                 <div class="media-caption">
-                  <strong>After</strong>
-                  <p>Cleaner cabinetry, better lighting, and a more current finish package.</p>
+                  <strong><span data-lang="en">Before</span><span data-lang="zh">改前</span></strong>
+                  <p data-lang="en">Kitchen condition before the new finish direction, based on the existing green cabinet layout.</p>
+                  <p data-lang="zh">这是改造前的厨房状态，以现在这组绿色柜体和原有布局为基础。</p>
                 </div>
               </article>
               <article class="media-frame">
-                <img src="./assets/gallery/images/kitchen-before.jpg" alt="Kitchen before improvement" />
+                <img src="./assets/gallery/images/kitchen-before.jpg" alt="Kitchen after remodel" />
                 <div class="media-caption">
-                  <strong>Before</strong>
-                  <p>Older cabinet treatment and a layout that reads more like inherited condition than intentional product.</p>
+                  <strong><span data-lang="en">After</span><span data-lang="zh">改后</span></strong>
+                  <p data-lang="en">The updated finish direction shown as the cleaner white-kitchen concept for comparison.</p>
+                  <p data-lang="zh">这是更新后的方向，用更干净的白色厨房方案来做对比展示。</p>
                 </div>
               </article>
             </div>
           </div>
 
           <div>
-            <div class="section-label">Bedroom direction</div>
+            <div class="section-label"><span data-lang="en">Bedroom direction</span><span data-lang="zh">卧室方向</span></div>
             <div class="gallery-pair">
               <article class="media-frame">
                 <img src="./assets/gallery/images/bedroom-after.jpg" alt="Bedroom after improvement" />
                 <div class="media-caption">
-                  <strong>After</strong>
-                  <p>Calmer built-ins, more deliberate work zone, and a stronger finished-space impression.</p>
+                  <strong><span data-lang="en">After</span><span data-lang="zh">改后</span></strong>
+                  <p data-lang="en">Calmer built-ins, more deliberate work zone, and a stronger finished-space impression.</p>
+                  <p data-lang="zh">收纳和工作区更完整，整体更安静，也更像真正完成的房间。</p>
                 </div>
               </article>
               <article class="media-frame">
                 <img src="./assets/gallery/images/bedroom-before.jpg" alt="Bedroom before improvement" />
                 <div class="media-caption">
-                  <strong>Before</strong>
-                  <p>Usable room, but basic and visually under-finished.</p>
+                  <strong><span data-lang="en">Before</span><span data-lang="zh">改前</span></strong>
+                  <p data-lang="en">Usable room, but basic and visually under-finished.</p>
+                  <p data-lang="zh">房间可以使用，但还比较基础，视觉上也显得没有做完。</p>
                 </div>
               </article>
             </div>
           </div>
 
           <div>
-            <div class="section-label">Garage direction</div>
+            <div class="section-label"><span data-lang="en">Garage direction</span><span data-lang="zh">车库方向</span></div>
             <div class="gallery-pair">
               <article class="media-frame">
                 <img src="./assets/gallery/images/garage-after.jpg" alt="Garage after improvement" />
                 <div class="media-caption">
-                  <strong>After</strong>
-                  <p>Clean, organized, and intentional. For some homeowners this is the right endpoint; for others it clarifies whether a bigger path is worth screening.</p>
+                  <strong><span data-lang="en">After</span><span data-lang="zh">改后</span></strong>
+                  <p data-lang="en">Clean, organized, and intentional. For some homeowners this is the right endpoint; for others it clarifies whether a bigger path is worth screening.</p>
+                  <p data-lang="zh">更整洁、收纳更清楚，也更像有明确用途的空间。对有些业主来说这就是终点；对另一些人来说，它帮助判断值不值得继续筛更大的路径。</p>
                 </div>
               </article>
               <article class="media-frame">
                 <img src="./assets/gallery/images/garage-before.jpg" alt="Garage before improvement" />
                 <div class="media-caption">
-                  <strong>Before</strong>
-                  <p>Typical storage-heavy garage condition with low clarity about the best next use.</p>
+                  <strong><span data-lang="en">Before</span><span data-lang="zh">改前</span></strong>
+                  <p data-lang="en">Typical storage-heavy garage condition with low clarity about the best next use.</p>
+                  <p data-lang="zh">典型的储物型车库状态，还看不出最适合的下一步用途。</p>
                 </div>
               </article>
             </div>
@@ -150,15 +180,17 @@
       </section>
 
       <section class="section">
-        <h2>Walkthrough clips</h2>
+        <h2 data-lang="en">Walkthrough clips</h2>
+        <h2 data-lang="zh">视频走查素材</h2>
         <div class="gallery-pair">
           <article class="media-frame">
             <video controls preload="metadata">
               <source src="./assets/gallery/videos/project-walkthrough-1.mp4" type="video/mp4" />
             </video>
             <div class="media-caption">
-              <strong>Walkthrough clip 1</strong>
-              <p>A short on-site visual reference for real-world condition and finish context.</p>
+              <strong><span data-lang="en">Walkthrough clip 1</span><span data-lang="zh">视频片段 1</span></strong>
+              <p data-lang="en">A short on-site visual reference for real-world condition and finish context.</p>
+              <p data-lang="zh">短视频参考，帮助客户从真实空间角度理解现场状态和完成度。</p>
             </div>
           </article>
           <article class="media-frame">
@@ -166,39 +198,47 @@
               <source src="./assets/gallery/videos/project-walkthrough-2.mp4" type="video/mp4" />
             </video>
             <div class="media-caption">
-              <strong>Walkthrough clip 2</strong>
-              <p>A second short clip that can be shared when a homeowner wants to see physical space instead of only still images.</p>
+              <strong><span data-lang="en">Walkthrough clip 2</span><span data-lang="zh">视频片段 2</span></strong>
+              <p data-lang="en">A second short clip that can be shared when a homeowner wants to see physical space instead of only still images.</p>
+              <p data-lang="zh">第二个短视频，适合客户想看真实空间，而不是只看静态图片时使用。</p>
             </div>
           </article>
         </div>
       </section>
 
       <section class="section">
-        <h2>What should happen next</h2>
-        <ul>
+        <h2 data-lang="en">What should happen next</h2>
+        <h2 data-lang="zh">下一步应该做什么</h2>
+        <ul data-lang="en">
           <li>Use the visuals to anchor the homeowner’s expectations.</li>
           <li>Then screen the address before anyone quotes scope or promises a path.</li>
           <li>If the property shows city or records friction, move into review instead of pretending every property is a clean standard case.</li>
         </ul>
+        <ul data-lang="zh">
+          <li>先用这些素材帮业主建立对结果方向的直观预期。</li>
+          <li>再去做地址预筛，不要先报 scope 或承诺路径。</li>
+          <li>如果物业已经暴露城市或 records friction，就应该进入 review，而不是假装每个物业都是标准干净案子。</li>
+        </ul>
         <div class="section-actions">
-          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/">Start the property screen</a>
-          <a class="button secondary" href="./garage-guide.html">Read garage guide</a>
-          <a class="button secondary" href="./legalization.html">Read legalization page</a>
-          <a class="button secondary" href="./city-guide.html">Open city guide</a>
+          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/"><span data-lang="en">Start the property screen</span><span data-lang="zh">开始物业预筛</span></a>
+          <a class="button secondary" href="./garage-guide.html"><span data-lang="en">Read garage guide</span><span data-lang="zh">查看车库指南</span></a>
+          <a class="button secondary" href="./legalization.html"><span data-lang="en">Read legalization page</span><span data-lang="zh">查看合法化页面</span></a>
+          <a class="button secondary" href="./city-guide.html"><span data-lang="en">Open city guide</span><span data-lang="zh">打开城市入口页</span></a>
         </div>
       </section>
 
       <footer class="site-footer">
         <div class="footer-copy">
-          These visuals help homeowners picture quality direction. They do not replace address screening, city-path review, or project-specific feasibility work.
+          <span data-lang="en">These visuals help homeowners picture quality direction. They do not replace address screening, city-path review, or project-specific feasibility work.</span>
+          <span data-lang="zh">这些素材帮助业主理解升级方向，但不能替代地址预筛、城市入口判断或具体可行性分析。</span>
         </div>
         <div class="footer-links">
-          <a href="./index.html">Home</a>
-          <a href="./garage-guide.html">Garage Guide</a>
-          <a href="./legalization.html">Legalization</a>
-          <a href="./city-guide.html">City Guide</a>
-          <a href="./case-library.html">Case Library</a>
-          <a href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/">Property Screen</a>
+          <a href="./index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
+          <a href="./garage-guide.html"><span data-lang="en">Garage Guide</span><span data-lang="zh">车库指南</span></a>
+          <a href="./legalization.html"><span data-lang="en">Legalization</span><span data-lang="zh">合法化</span></a>
+          <a href="./city-guide.html"><span data-lang="en">City Guide</span><span data-lang="zh">城市入口</span></a>
+          <a href="./case-library.html"><span data-lang="en">Case Library</span><span data-lang="zh">案例库</span></a>
+          <a href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/"><span data-lang="en">Property Screen</span><span data-lang="zh">开始预筛</span></a>
         </div>
       </footer>
     </div>

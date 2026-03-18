@@ -8,3 +8,9 @@ data/
 .playwright-cli/
 output/
 .streamlit/secrets.toml
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
