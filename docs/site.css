@@ -280,6 +280,60 @@ a {
   border-top: 1px solid var(--line);
 }
 
+.gallery-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 28px;
+}
+
+.media-frame {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 10px 24px rgba(32, 61, 73, 0.05);
+}
+
+.media-frame img,
+.media-frame video {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  background: #dfe6e9;
+}
+
+.media-caption {
+  padding: 14px 16px 16px;
+}
+
+.media-caption strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.94rem;
+  letter-spacing: 0.02em;
+}
+
+.media-caption p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.section-label {
+  margin: 0 0 12px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
 .faq-item h3 {
   margin: 0 0 8px;
   font-size: 1.02rem;
