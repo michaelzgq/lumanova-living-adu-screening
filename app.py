@@ -2663,7 +2663,9 @@ def render_launch_kit() -> None:
     st.write(f"**{t('channel_templates')}**")
     for entry_key, label in entry_order:
         link = build_public_url(normalized_base_url, entry_key, source=source, medium=medium, campaign=campaign, embed=embed_mode)
-        st.text_input(label, value=link, key=f"launch_link_{entry_key}")
+        output_key = f"launch_link_{entry_key}"
+        st.session_state[output_key] = link
+        st.text_input(label, key=output_key)
 
     general_link = build_public_url(normalized_base_url, "default", source=source, medium=medium, campaign=campaign, embed=embed_mode)
     garage_link = build_public_url(normalized_base_url, "garage", source=source, medium=medium, campaign=campaign, embed=embed_mode)
