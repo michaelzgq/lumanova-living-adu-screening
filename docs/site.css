@@ -124,6 +124,14 @@ a {
   display: none !important;
 }
 
+html[data-ui-lang="en"] [data-lang="zh"] {
+  display: none !important;
+}
+
+html[data-ui-lang="zh"] [data-lang="en"] {
+  display: none !important;
+}
+
 .hero {
   margin-top: 26px;
   padding: 34px;
