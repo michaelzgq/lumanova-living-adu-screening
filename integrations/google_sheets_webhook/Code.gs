@@ -88,6 +88,12 @@ function doGet(e) {
     );
   }
 
+  const action = String((e && e.parameter && e.parameter.action) || 'status').toLowerCase();
+  if (action === 'list') {
+    const limit = Number((e && e.parameter && e.parameter.limit) || 200) || 200;
+    return jsonResponse(buildLeadListResponse_(limit), 200);
+  }
+
   return jsonResponse(
     {
       ok: true,
@@ -97,6 +103,61 @@ function doGet(e) {
     },
     200,
   );
+}
+
+function buildLeadListResponse_(limit) {
+  const sheet = getOrCreateSheet_();
+  ensureHeaderRow_(sheet);
+  const lastRow = sheet.getLastRow();
+  if (lastRow < 2) {
+    return {
+      ok: true,
+      count: 0,
+      leads: [],
+    };
+  }
+
+  const values = sheet.getRange(2, 1, lastRow - 1, HEADERS.length).getValues();
+  const rawPayloadIndex = HEADERS.indexOf('raw_payload_json');
+  const receivedAtIndex = HEADERS.indexOf('received_at');
+  const externalStatusIndex = HEADERS.indexOf('external_sync_status');
+  const deletedAtIndex = HEADERS.indexOf('deleted_at');
+
+  const leads = [];
+  for (let index = values.length - 1; index >= 0; index -= 1) {
+    const row = values[index];
+    const deletedAt = String(row[deletedAtIndex] || '');
+    if (deletedAt) {
+      continue;
+    }
+
+    const rawPayload = String(row[rawPayloadIndex] || '');
+    if (!rawPayload) {
+      continue;
+    }
+
+    try {
+      const payload = JSON.parse(rawPayload);
+      if (!payload || !payload.lead) {
+        continue;
+      }
+      payload.lead.external_sync_status = String(row[externalStatusIndex] || 'synced');
+      payload.lead.external_sync_at = String(row[receivedAtIndex] || '');
+      leads.push(payload.lead);
+    } catch (error) {
+      // Skip malformed historical rows rather than failing the whole response.
+    }
+
+    if (leads.length >= limit) {
+      break;
+    }
+  }
+
+  return {
+    ok: true,
+    count: leads.length,
+    leads: leads,
+  };
 }
 
 function getOrCreateSheet_() {

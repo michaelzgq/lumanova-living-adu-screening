@@ -105,45 +105,48 @@ class LeadRepository:
         return None
 
     def export_csv(self) -> str:
-        leads = self.list_leads()
-        if not leads:
-            return ""
+        return export_leads_csv(self.list_leads())
 
-        rows = []
-        for lead in leads:
-            rows.append(
-                {
-                    "lead_id": lead.id,
-                    "created_at": lead.created_at,
-                    "full_name": lead.answers.full_name,
-                    "email": lead.answers.email,
-                    "phone": lead.answers.phone,
-                    "wechat_id": lead.answers.wechat_id,
-                    "contact_preference": lead.answers.contact_preference,
-                    "best_contact_time": lead.answers.best_contact_time,
-                    "source_tag": lead.answers.source_tag,
-                    "utm_source": lead.answers.utm_source,
-                    "utm_medium": lead.answers.utm_medium,
-                    "utm_campaign": lead.answers.utm_campaign,
-                    "property_address": lead.answers.property_address,
-                    "jurisdiction": lead.result.jurisdiction_label,
-                    "project": lead.result.project_label,
-                    "path": lead.result.recommended_path,
-                    "risk_tier": lead.result.risk_tier,
-                    "stage": lead.stage,
-                    "disposition_reason": lead.disposition_reason,
-                    "assigned_to": lead.assigned_to,
-                    "next_action": lead.next_action,
-                    "external_sync_status": lead.external_sync_status,
-                    "external_sync_at": lead.external_sync_at,
-                    "recommended_service": lead.result.recommended_service,
-                    "summary": lead.result.summary,
-                }
-            )
 
-        fieldnames = list(rows[0].keys())
-        buffer = StringIO()
-        writer = csv.DictWriter(buffer, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
-        return buffer.getvalue()
+def export_leads_csv(leads: list[LeadRecord]) -> str:
+    if not leads:
+        return ""
+
+    rows = []
+    for lead in leads:
+        rows.append(
+            {
+                "lead_id": lead.id,
+                "created_at": lead.created_at,
+                "full_name": lead.answers.full_name,
+                "email": lead.answers.email,
+                "phone": lead.answers.phone,
+                "wechat_id": lead.answers.wechat_id,
+                "contact_preference": lead.answers.contact_preference,
+                "best_contact_time": lead.answers.best_contact_time,
+                "source_tag": lead.answers.source_tag,
+                "utm_source": lead.answers.utm_source,
+                "utm_medium": lead.answers.utm_medium,
+                "utm_campaign": lead.answers.utm_campaign,
+                "property_address": lead.answers.property_address,
+                "jurisdiction": lead.result.jurisdiction_label,
+                "project": lead.result.project_label,
+                "path": lead.result.recommended_path,
+                "risk_tier": lead.result.risk_tier,
+                "stage": lead.stage,
+                "disposition_reason": lead.disposition_reason,
+                "assigned_to": lead.assigned_to,
+                "next_action": lead.next_action,
+                "external_sync_status": lead.external_sync_status,
+                "external_sync_at": lead.external_sync_at,
+                "recommended_service": lead.result.recommended_service,
+                "summary": lead.result.summary,
+            }
+        )
+
+    fieldnames = list(rows[0].keys())
+    buffer = StringIO()
+    writer = csv.DictWriter(buffer, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(rows)
+    return buffer.getvalue()

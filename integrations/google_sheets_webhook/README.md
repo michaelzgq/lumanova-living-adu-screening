@@ -39,6 +39,7 @@ export ADU_LEAD_WEBHOOK_HEADERS_JSON=""
 
 - This receiver is optimized for first production testing.
 - It supports `lead.created`, `lead.updated`, and `lead.deleted`.
+- It supports `GET ...?action=list&token=...` so the admin inbox can read shared leads back from Google Sheets.
 - It also stores `wechat_id` and `disposition_reason` when present.
 - The receiver stores the raw payload JSON in the row so you can inspect the full lead later.
 - The `Leads` tab is updated by `lead_id`, so updates and deletes do not create duplicate rows by default.

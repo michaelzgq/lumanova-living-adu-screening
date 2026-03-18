@@ -26,6 +26,7 @@ from app.models import (
     suggested_next_action_for_lead,
     utc_now_iso,
 )
+from app.remote_leads import fetch_remote_leads, merge_local_and_remote_leads, remote_lead_source_configured
 from app.rules import (
     JURISDICTION_LABELS,
     PROJECT_LABELS,
@@ -34,7 +35,7 @@ from app.rules import (
     suggest_jurisdiction,
     suggest_project_type,
 )
-from app.storage import LeadRepository
+from app.storage import LeadRepository, export_leads_csv
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -2289,6 +2290,17 @@ def render_admin_config_diagnostics() -> None:
             )
 
 
+def get_admin_inbox_leads(repository: LeadRepository) -> tuple[list[LeadRecord], str]:
+    local_leads = repository.list_leads()
+    if not remote_lead_source_configured():
+        return local_leads, "local_only"
+
+    remote_leads, remote_error = fetch_remote_leads(limit=300)
+    if remote_error:
+        return local_leads, remote_error
+    return merge_local_and_remote_leads(local_leads, remote_leads), "remote_ok"
+
+
 def render_copilot_brief(lead: LeadRecord) -> None:
     brief = generate_copilot_brief(lead)
     with st.expander(t("ai_copilot"), expanded=True):
@@ -2335,12 +2347,16 @@ def render_copilot_brief(lead: LeadRecord) -> None:
 
 
 def render_lead_inbox(repository: LeadRepository) -> None:
-    leads = repository.list_leads()
+    leads, remote_status = get_admin_inbox_leads(repository)
     if webhook_configured():
         st.success(f"{t('webhook_ready')} {webhook_target_label()}")
     else:
         st.warning(t("webhook_missing"))
     render_admin_config_diagnostics()
+    if remote_status == "remote_ok":
+        st.caption("Admin inbox is using Google Sheets as the shared lead source.")
+    elif remote_status not in {"local_only", ""}:
+        st.caption(f"Remote inbox fallback: {remote_status}")
     metric_cols = st.columns(5)
     metric_cols[0].metric(t("leads"), len(leads))
     metric_cols[1].metric(route_label("A"), sum(1 for lead in leads if lead.result.recommended_path == "A"))
@@ -2367,7 +2383,7 @@ def render_lead_inbox(repository: LeadRepository) -> None:
         for source_key, count in sorted(source_counts.items(), key=lambda item: (-item[1], item[0]))[:8]:
             st.write(f"- {source_key}: {count}")
 
-    csv_output = repository.export_csv()
+    csv_output = export_leads_csv(leads)
     st.download_button(
         t("download_csv"),
         data=csv_output,

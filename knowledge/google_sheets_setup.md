@@ -72,6 +72,7 @@ That means:
 - `lead.created` creates the row
 - `lead.updated` overwrites the same row
 - `lead.deleted` marks the row with `deleted_at`
+- `action=list` lets the admin inbox read leads back from Google Sheets as a shared source
 
 If you want a separate audit trail later, add a second `Events` tab in a future version.
 
