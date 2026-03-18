@@ -35,6 +35,7 @@ from app.rules import (
     suggest_jurisdiction,
     suggest_project_type,
 )
+from app.source_context import resolve_source_context
 from app.storage import LeadRepository, export_leads_csv
 
 
@@ -1508,12 +1509,8 @@ def is_embed_mode() -> bool:
 
 def sync_source_context_from_query_params() -> None:
     query_params = st.query_params
-    st.session_state["source_context"] = {
-        "source_tag": str(query_params.get("source", "")).strip(),
-        "utm_source": str(query_params.get("utm_source", "")).strip(),
-        "utm_medium": str(query_params.get("utm_medium", "")).strip(),
-        "utm_campaign": str(query_params.get("utm_campaign", "")).strip(),
-    }
+    headers = getattr(st.context, "headers", {})
+    st.session_state["source_context"] = resolve_source_context(query_params, headers)
 
 
 def result_key(knowledge_ids: list[str], mapping: dict[str, str], fallback_label: str) -> str:
