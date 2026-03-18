@@ -194,6 +194,7 @@ Related docs:
 - [google_sheets_setup.md](/Users/mikezhang/Documents/lumanova living/adu_screening_mvp/knowledge/google_sheets_setup.md)
 - [launch_readiness.md](/Users/mikezhang/Documents/lumanova living/adu_screening_mvp/knowledge/launch_readiness.md)
 - [streamlit_cloud_deploy.md](/Users/mikezhang/Documents/lumanova living/adu_screening_mvp/knowledge/streamlit_cloud_deploy.md)
+- [github_publish_steps.md](/Users/mikezhang/Documents/lumanova living/adu_screening_mvp/knowledge/github_publish_steps.md)
 
 ## Tests
 
