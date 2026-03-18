@@ -120,12 +120,20 @@ a {
   background: rgba(255, 255, 255, 0.72);
 }
 
-[data-lang][hidden] {
+[data-lang="zh"] {
   display: none !important;
+}
+
+html[data-ui-lang="en"] [data-lang="en"] {
+  display: revert !important;
 }
 
 html[data-ui-lang="en"] [data-lang="zh"] {
   display: none !important;
+}
+
+html[data-ui-lang="zh"] [data-lang="zh"] {
+  display: revert !important;
 }
 
 html[data-ui-lang="zh"] [data-lang="en"] {

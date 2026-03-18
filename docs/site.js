@@ -14,10 +14,6 @@
       // Ignore storage failures in private or restricted contexts.
     }
 
-    document.querySelectorAll("[data-lang]").forEach((node) => {
-      node.hidden = node.getAttribute("data-lang") !== next;
-    });
-
     document.querySelectorAll("[data-set-lang]").forEach((button) => {
       const active = button.getAttribute("data-set-lang") === next;
       button.setAttribute("aria-pressed", active ? "true" : "false");
