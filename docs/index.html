@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lumanova Living | ADU Property Screen</title>
+    <title>Lumanova Living | Property Screening for ADU and Garage Projects</title>
     <meta
       name="description"
       content="Lumanova Living helps Los Angeles and SGV homeowners screen garage conversions, detached ADUs, and legalization issues before spending on design or construction."
@@ -12,190 +12,167 @@
       name="keywords"
       content="ADU Los Angeles, garage conversion, legalization, unpermitted unit, detached ADU, SGV"
     />
-    <meta property="og:title" content="Lumanova Living | ADU Property Screen" />
+    <meta property="og:title" content="Lumanova Living | Property Screening for ADU and Garage Projects" />
     <meta
       property="og:description"
-      content="A fast Los Angeles property screen for garage conversions, detached ADUs, and legalization issues."
+      content="A practical first step for Los Angeles and SGV homeowners exploring garage conversions, detached ADUs, and existing permit issues."
     />
     <meta property="og:type" content="website" />
-    <meta
-      http-equiv="refresh"
-      content="6; url=https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/"
-    />
-    <style>
-      :root {
-        --bg: #f3ecdf;
-        --card: #fffaf2;
-        --text: #243f4a;
-        --muted: #5f7882;
-        --accent: #c86b3c;
-        --border: rgba(36, 63, 74, 0.12);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Avenir Next", "Helvetica Neue", sans-serif;
-        background:
-          radial-gradient(circle at top left, rgba(200, 107, 60, 0.14), transparent 28rem),
-          radial-gradient(circle at top right, rgba(36, 63, 74, 0.1), transparent 26rem),
-          var(--bg);
-        color: var(--text);
-      }
-
-      main {
-        max-width: 920px;
-        margin: 0 auto;
-        padding: 48px 24px 72px;
-      }
-
-      .eyebrow {
-        font-size: 0.85rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--accent);
-        font-weight: 700;
-      }
-
-      h1 {
-        margin: 14px 0 12px;
-        font-size: clamp(2.2rem, 4vw, 4rem);
-        line-height: 0.98;
-      }
-
-      .intro {
-        max-width: 720px;
-        color: var(--muted);
-        font-size: 1.08rem;
-        line-height: 1.7;
-      }
-
-      .card {
-        margin-top: 30px;
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 24px;
-        padding: 28px;
-        box-shadow: 0 18px 50px rgba(36, 63, 74, 0.08);
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 16px;
-        margin-top: 18px;
-      }
-
-      .tile {
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        padding: 18px;
-        background: rgba(255, 255, 255, 0.7);
-      }
-
-      .tile h2 {
-        margin: 0 0 8px;
-        font-size: 1.05rem;
-      }
-
-      .tile p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.6;
-        font-size: 0.96rem;
-      }
-
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        margin-top: 24px;
-      }
-
-      .button {
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 200px;
-        padding: 14px 18px;
-        border-radius: 999px;
-        font-weight: 700;
-        border: 1px solid transparent;
-      }
-
-      .button.primary {
-        background: var(--text);
-        color: white;
-      }
-
-      .button.secondary {
-        border-color: var(--border);
-        color: var(--text);
-        background: transparent;
-      }
-
-      .note {
-        margin-top: 18px;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-    </style>
+    <link rel="stylesheet" href="./site.css" />
   </head>
   <body>
-    <main>
-      <div class="eyebrow">Los Angeles · SGV · ADU Intake</div>
-      <h1>Lumanova Living Property Screen</h1>
-      <p class="intro">
-        A fast intake for homeowners who want an early read on garage
-        conversions, detached ADUs, and legalization issues before anyone quotes
-        design or construction.
-      </p>
-
-      <section class="card">
-        <div class="grid">
-          <article class="tile">
-            <h2>Garage conversion</h2>
-            <p>For attached or detached garage conversion questions in Los Angeles and SGV cities.</p>
-          </article>
-          <article class="tile">
-            <h2>Detached ADU</h2>
-            <p>For new backyard ADU exploration, path screening, and early feasibility review.</p>
-          </article>
-          <article class="tile">
-            <h2>Legalization / existing issue</h2>
-            <p>For correction notices, permit history, unpermitted work, or rescue-type cases.</p>
-          </article>
+    <div class="site-shell">
+      <header class="site-nav">
+        <div class="brand-lockup">
+          <div class="brand-name">Lumanova Living</div>
+          <div class="brand-tag">Property screening for LA and SGV homeowners</div>
         </div>
+        <nav class="nav-links">
+          <a class="nav-link is-active" href="./index.html">Home</a>
+          <a class="nav-link" href="./garage-guide.html">Garage Guide</a>
+          <a class="nav-link" href="./legalization.html">Legalization</a>
+          <a class="nav-link" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/">Property Screen</a>
+        </nav>
+      </header>
 
-        <div class="actions">
-          <a
-            class="button primary"
-            href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/"
-          >
-            Open Property Screen
-          </a>
-          <a
-            class="button secondary"
-            href="./garage-guide.html"
-          >
-            Garage cost & rules guide
-          </a>
-          <a
-            class="button secondary"
-            href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization"
-          >
-            Open Legalization Flow
-          </a>
-        </div>
-
-        <p class="note">
-          You will be redirected automatically in a few seconds. If not, use the buttons above.
+      <section class="hero">
+        <div class="eyebrow">Los Angeles · SGV · Screen First</div>
+        <h1>Find out which path your property likely belongs to before you pay for plans.</h1>
+        <p class="hero-copy">
+          Lumanova Living helps Los Angeles and San Gabriel Valley homeowners screen garage conversions,
+          detached ADUs, and existing permit problems before anyone starts quoting design or construction.
+          The goal is simple: get to the right next step earlier, with less wasted cost.
         </p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/">Start the property screen</a>
+          <a class="button secondary" href="./legalization.html">See legalization path</a>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Garage conversions</span>
+          <span class="pill">Detached ADUs</span>
+          <span class="pill">Existing issue / legalization</span>
+          <span class="pill">Bilingual homeowner intake</span>
+        </div>
       </section>
-    </main>
+
+      <section class="section split-highlight">
+        <div>
+          <h2>What this is</h2>
+          <p>
+            This is not a final permit opinion and not a construction quote form. It is an early property
+            screen that helps separate cleaner-looking projects from blocker-heavy cases, older unpermitted
+            work, or situations that need deeper records review.
+          </p>
+          <div class="section-actions">
+            <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=garage">Screen a garage project</a>
+            <a class="button secondary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=adu">Screen a detached ADU</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Built for real homeowner questions</h3>
+          <p>
+            Most people do not start with a clean permit strategy. They start with one of these questions:
+            “Can I convert this garage?”, “Is this lot even workable?”, or “What do I do about an old unit
+            that was built without permits?”
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Choose the closest starting point</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Garage conversion</h3>
+            <p>Use this if the property already has an attached or detached garage and you want an early read before design or contractor pricing.</p>
+            <div class="section-actions">
+              <a class="button secondary" href="./garage-guide.html">Read guide</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Detached ADU</h3>
+            <p>Use this if you are evaluating a new backyard unit and want an early route check before getting deep into drawings or pricing.</p>
+            <div class="section-actions">
+              <a class="button secondary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=adu">Open detached ADU screen</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Legalization / existing issue</h3>
+            <p>Use this if a converted garage, detached room, old notice, or sale-time issue suggests the property may already have permit friction.</p>
+            <div class="section-actions">
+              <a class="button secondary" href="./legalization.html">See legalization page</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>How the process works</h2>
+        <div class="process-list">
+          <div class="process-step">
+            <div class="step-badge">1</div>
+            <div>
+              <h3>Submit the screen</h3>
+              <p>Enter the property address, project goal, and any obvious blocker signals such as hillside, basement, prior notice, or unpermitted work.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-badge">2</div>
+            <div>
+              <h3>We sort the path</h3>
+              <p>The intake helps route the property toward a cleaner standard path, a blocker diagnosis path, or a rescue / legalization scenario.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-badge">3</div>
+            <div>
+              <h3>Manual review happens next</h3>
+              <p>The team still reviews the details before anyone treats the result like a real permit strategy or project green light.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>What makes people use this first</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Lower wasted spend</h3>
+            <p>Homeowners can screen for likely friction before paying for design, engineering, or full contractor quoting.</p>
+          </article>
+          <article class="card">
+            <h3>Better intake quality</h3>
+            <p>Instead of a vague “how much does this cost?” inquiry, the team receives address, intent, and blocker context in one place.</p>
+          </article>
+          <article class="card">
+            <h3>Fits LA and SGV reality</h3>
+            <p>The intake is framed around the kinds of garage, detached ADU, and legalization questions local homeowners actually ask.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Start with the screen, then go deeper only if it makes sense</h2>
+        <p class="micro">
+          If the property looks straightforward, the next conversation is simpler. If it looks heavier, you find that out before spending on the wrong next step.
+        </p>
+        <div class="section-actions">
+          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/">Open property screen</a>
+          <a class="button secondary" href="./garage-guide.html">Read garage guide</a>
+          <a class="button secondary" href="./legalization.html">Read legalization page</a>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-copy">
+          Screen first, quote later. Lumanova Living is built for Los Angeles and San Gabriel Valley homeowners who want a practical first step before design or construction spending.
+        </div>
+        <div class="footer-links">
+          <a href="./index.html">Home</a>
+          <a href="./garage-guide.html">Garage Guide</a>
+          <a href="./legalization.html">Legalization</a>
+          <a href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/">Property Screen</a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

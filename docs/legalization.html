@@ -8,137 +8,55 @@
       name="description"
       content="Screen an unpermitted garage conversion, ADU, or existing unit issue before spending on architects, attorneys, or construction. Built for Los Angeles and SGV homeowners."
     />
-    <style>
-      :root {
-        --bg: #f4edde;
-        --card: #fffaf2;
-        --text: #203d49;
-        --muted: #607985;
-        --accent: #c56a3a;
-        --line: rgba(32, 61, 73, 0.12);
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: "Avenir Next", "Helvetica Neue", sans-serif;
-        color: var(--text);
-        background:
-          radial-gradient(circle at top left, rgba(197, 106, 58, 0.16), transparent 28rem),
-          radial-gradient(circle at top right, rgba(32, 61, 73, 0.1), transparent 25rem),
-          var(--bg);
-      }
-      main {
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 48px 24px 72px;
-      }
-      .eyebrow {
-        color: var(--accent);
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        font-size: 0.82rem;
-        font-weight: 700;
-      }
-      h1 {
-        margin: 12px 0 14px;
-        font-size: clamp(2.2rem, 4vw, 4rem);
-        line-height: 1;
-      }
-      .sub {
-        max-width: 760px;
-        color: var(--muted);
-        font-size: 1.06rem;
-        line-height: 1.7;
-      }
-      .section {
-        margin-top: 28px;
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        padding: 28px;
-        box-shadow: 0 16px 44px rgba(32, 61, 73, 0.08);
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 16px;
-      }
-      .tile {
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 18px;
-        background: rgba(255,255,255,0.72);
-      }
-      h2 {
-        margin: 0 0 12px;
-        font-size: 1.32rem;
-      }
-      h3 {
-        margin: 0 0 8px;
-        font-size: 1rem;
-      }
-      p, li {
-        color: var(--muted);
-        line-height: 1.7;
-      }
-      ul {
-        margin: 10px 0 0;
-        padding-left: 20px;
-      }
-      .cta-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        margin-top: 20px;
-      }
-      .button {
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 220px;
-        border-radius: 999px;
-        padding: 14px 18px;
-        font-weight: 700;
-      }
-      .button.primary {
-        background: var(--text);
-        color: #fff;
-      }
-      .button.secondary {
-        border: 1px solid var(--line);
-        color: var(--text);
-        background: transparent;
-      }
-      .note {
-        font-size: 0.94rem;
-        color: var(--muted);
-      }
-    </style>
+    <link rel="stylesheet" href="./site.css" />
   </head>
   <body>
-    <main>
-      <div class="eyebrow">Los Angeles · SGV · Legalization Screening</div>
-      <h1>Have an unpermitted unit or old garage conversion issue?</h1>
-      <p class="sub">
-        Start with a property screen before you spend money on architects, attorneys,
-        or construction. This intake is built for Los Angeles and SGV homeowners who
-        need an early read on whether a project looks like a standard path, a blocker-heavy
-        review, or a rescue / legalization case.
-      </p>
+    <div class="site-shell">
+      <header class="site-nav">
+        <div class="brand-lockup">
+          <div class="brand-name">Lumanova Living</div>
+          <div class="brand-tag">Property screening for LA and SGV homeowners</div>
+        </div>
+        <nav class="nav-links">
+          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link" href="./garage-guide.html">Garage Guide</a>
+          <a class="nav-link is-active" href="./legalization.html">Legalization</a>
+          <a class="nav-link" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization">Property Screen</a>
+        </nav>
+      </header>
+
+      <section class="hero page-head">
+        <div class="eyebrow">Los Angeles · SGV · Legalization Screening</div>
+        <h1>Have an unpermitted unit or old garage conversion issue?</h1>
+        <p class="page-sub">
+          Start with a property screen before you spend money on architects, attorneys, or construction.
+          This intake is built for Los Angeles and SGV homeowners who need an early read on whether a project
+          looks like a standard path, a blocker-heavy review, or a rescue / legalization case.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization">Start the legalization screen</a>
+          <a class="button secondary" href="./index.html">Back to home</a>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Converted garage</span>
+          <span class="pill">Old detached room</span>
+          <span class="pill">Correction notice</span>
+          <span class="pill">Sale-time permit issue</span>
+        </div>
+      </section>
 
       <section class="section">
         <h2>Common situations this screen is for</h2>
-        <div class="grid">
-          <article class="tile">
+        <div class="grid-3">
+          <article class="card">
             <h3>Converted garage with no permit</h3>
             <p>If a garage was turned into living space years ago and records are unclear, start here first.</p>
           </article>
-          <article class="tile">
+          <article class="card">
             <h3>Old addition or detached room</h3>
             <p>If part of the property was built without plans or final approval, screening helps clarify risk before deeper spend.</p>
           </article>
-          <article class="tile">
+          <article class="card">
             <h3>Correction notice or sale-time issue</h3>
             <p>If an agent, buyer, lender, or city notice surfaced a permit problem, this is the right entry point.</p>
           </article>
@@ -152,9 +70,23 @@
           <li>Separates standard-looking ADU cases from cases that likely need deeper records review.</li>
           <li>Gives the team enough context to decide whether to call, review, or escalate.</li>
         </ul>
-        <p class="note">
+        <p class="micro">
           This is a screening tool, not a final permit opinion, legal opinion, or engineering judgment.
         </p>
+      </section>
+
+      <section class="section">
+        <h2>What this screen does not do</h2>
+        <div class="grid-2">
+          <article class="card">
+            <h3>It does not replace city confirmation</h3>
+            <p>Use the screen to sort the project early, not to assume a final permit outcome without records review or official confirmation.</p>
+          </article>
+          <article class="card">
+            <h3>It does not turn a complex case into a simple one</h3>
+            <p>Older work, permit gaps, hillside conditions, and correction history still need real review even if the first intake looks promising.</p>
+          </article>
+        </div>
       </section>
 
       <section class="section">
@@ -164,21 +96,38 @@
           <li>Do not spend on a full design package before understanding whether the existing conditions create extra friction.</li>
           <li>Do not call it “simple legalization” until the property details and records are screened.</li>
         </ul>
-        <div class="cta-row">
-          <a
-            class="button primary"
-            href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization"
-          >
-            Start the legalization screen
-          </a>
-          <a
-            class="button secondary"
-            href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/"
-          >
-            Open general property screen
-          </a>
+        <div class="section-actions">
+          <a class="button primary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization">Start the legalization screen</a>
+          <a class="button secondary" href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/">Open general property screen</a>
         </div>
       </section>
-    </main>
+
+      <section class="section">
+        <h2>FAQ</h2>
+        <div class="faq-item">
+          <h3>Should I call the city first?</h3>
+          <p>Not usually as a first move. It is often better to screen the property details and the likely issue type before treating the case like a simple city question.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is this only for severe problem cases?</h3>
+          <p>No. It also works for people who just discovered that an older garage, detached room, or permit history may complicate a sale, refinance, or future project.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What happens after I submit?</h3>
+          <p>The intake is routed for manual review. If the case looks workable, someone can follow up with a better sense of whether it belongs in a cleaner path or a deeper review path.</p>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-copy">
+          This page is built for Los Angeles and SGV homeowners dealing with older converted garages, detached rooms, or other permit-history problems that should be screened before deeper spend.
+        </div>
+        <div class="footer-links">
+          <a href="./index.html">Home</a>
+          <a href="./garage-guide.html">Garage Guide</a>
+          <a href="https://lumanova-living-adu-screening-fzcdyrfu9pakal7eelwwzj.streamlit.app/?entry=legalization">Property Screen</a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
